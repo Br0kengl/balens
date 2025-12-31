@@ -1,25 +1,33 @@
-client.exec("Clear")
-
 print([[
+--[[
+ _______  _______  _______  _______  _        _______  ______   _       _________       
+(  ____ )(  ____ )(  __   )(  ____ \( \      (  ___  )(  __  \ | \    /\\__   __/       
+| (    )|| (    )|| (  )  || (    \/| (      | (   ) || (  \  )|  \  / /   ) (          
+| (____)|| (____)|| | /   || |      | |      | (___) || |   ) ||  (_/ /    | |          
+|  _____)|     __)| (/ /) || |      | |      |  ___  || |   | ||   _ (     | |          
+| (      | (\ (   |   / | || |      | |      | (   ) || |   ) ||  ( \ \    | |          
+| )      | ) \ \__|  (__) || (____/\| (____/\| )   ( || (__/  )|  /  \ \___) (___       
+|/       |/   \__/(_______)(_______/(_______/|/     \|(______/ |_/    \/\_______/       
+                                                                                        
+ ______              _______  _______  __    _______ ______   _        ______   _______ 
+(  ___ \ |\     /|  (  ____ \(  ____ )/  \  (  ____ Y ___  \ ( (    /|(  __  \ (  __   )
+| (   ) )( \   / )  | (    \/| (    )|\/) ) | (    \|/   \  \|  \  ( || (  \  )| (  )  |
+| (__/ /  \ (_) /   | |      | (____)|  | | | |        ___) /|   \ | || |   ) || | /   |
+|  __ (    \   /    | | ____ |     __)  | | | |       (___ ( | (\ \) || |   | || (/ /) |
+| (  \ \    ) (     | | \_  )| (\ (     | | | |           ) \| | \   || |   ) ||   / | |
+| )___) )   | |     | (___) || ) \ \____) (_| (____/Y\___/  /| )  \  || (__/  )|  (__) |
+|/ \___/    \_/     (_______)|/   \__/\____/(_______|______/ |/    )_)(______/ (_______)
+                                                                                        
+--]])                                                                         
 
-██████╗  █████╗ ██╗     ███████╗███╗   ██╗ ██████╗██╗ █████╗  ██████╗  █████╗ 
-██╔══██╗██╔══██╗██║     ██╔════╝████╗  ██║██╔════╝██║██╔══██╗██╔════╝ ██╔══██╗
-██████╔╝███████║██║     █████╗  ██╔██╗ ██║██║     ██║███████║██║  ███╗███████║
-██╔══██╗██╔══██║██║     ██╔══╝  ██║╚██╗██║██║     ██║██╔══██║██║   ██║██╔══██║
-██████╔╝██║  ██║███████╗███████╗██║ ╚████║╚██████╗██║██║  ██║╚██████╔╝██║  ██║
-╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝ ╚═════╝╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝
-                                                                              
-]])
 
 
---
 -- Initalization
---
 local user do
     user = {} do
-        user.name = _USER_NAME or "user"
-        user.role = "insiders"
-        user.last_update = "no_info"
+        user.name = _USER_NAME or "Pr0kladkochki_user"
+        user.role = "Pid0r1s"
+        user.last_update = "interesting question"
         user.debug = false
 
         if not LPH_OBFUSCATED then
@@ -32,10 +40,6 @@ end
 
 LPH_NO_VIRTUALIZE(function ()
     local ffi = require 'ffi';
-
-    ---
-    --- Dependencies manager
-    ---
     do
         local dependencies = {
             ['csgo_weapons'] = {
@@ -89,24 +93,17 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
-    --- Dependencies
-    ---
     local vector = require 'vector'
     local csgo_weapons = require 'gamesense/csgo_weapons'
     local base64 = require 'gamesense/base64'
     local clipboard = require 'gamesense/clipboard'
     local surface = require 'gamesense/surface'
-    --local tweening = require 'gamesense/tweening'
     local inspect do
         if user.debug then
             inspect = require 'gamesense/inspect'
         end
     end
 
-    ---
-    --- Internal modules
-    ---
     local c_math, c_logger, c_table, c_string, c_animations, c_tweening, c_grams do
         c_math = {} do
             c_math.min = (function (a, b)
@@ -202,19 +199,19 @@ LPH_NO_VIRTUALIZE(function ()
 
         c_logger = {} do
             c_logger.log = (function (format, ...)
-                client.color_log(108, 181, 119, '[BALENCIAGA] \1\0')
+                client.color_log(108, 181, 119, '[PR0KLADKI] \1\0')
                 client.color_log(61, 212, 197, ('[%02d:%02d:%02d] \1\0'):format(client.system_time()))
                 client.color_log(255, 255, 255, format:format(...))
             end)
 
             c_logger.log_error = (function (format, ...)
-                client.color_log(108, 181, 119, '[BALENCIAGA] \1\0')
+                client.color_log(108, 181, 119, '[PR0KLADKI] \1\0')
                 client.color_log(61, 212, 197, ('[%02d:%02d:%02d] \1\0'):format(client.system_time()))
                 client.color_log(255, 0, 255, format:format(...))
             end)
 
             c_logger.log_error_fatal = (function (format, ...)
-                client.color_log(108, 181, 119, '[BALENCIAGA] \1\0')
+                client.color_log(108, 181, 119, '[PR0KLADKI] \1\0')
                 client.color_log(61, 212, 197, ('[%02d:%02d:%02d] \1\0'):format(client.system_time()))
                 client.color_log(255, 0, 50, format:format(...))
 
@@ -619,21 +616,19 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
-    --- Constant section .data
-    ---
+    -- constants
+
     local c_constant do
         c_constant = {} do
             c_constant.STATE_LIST = { 'Standing', 'Slow-motion', 'Moving', 'Crouching', 'Crouch moving', 'Air', 'Air & Crouch' }
             c_constant.DEFENSIVE_STATES = { 'On peek', 'Legit AA', 'Edge direction', 'Safe head', 'Triggered' }
-            --c_constant.
 
             c_constant.fonts = {} do
                 c_constant.fonts.lucida = surface.create_font('Lucida Console', 10, 400, 128)
             end
 
             c_constant.antiaim_presets = {} do
-                c_constant.antiaim_presets['BALENCIAGA'] = {
+                c_constant.antiaim_presets['PR0KLADKI'] = {
                     ['Legit AA'] = {
                         pitch = 'Off',
                         yaw_base = 'Local view',
@@ -828,7 +823,6 @@ LPH_NO_VIRTUALIZE(function ()
 
             c_constant.defensive_presets = {} do
                 c_constant.defensive_presets["Auto"] = {
-                    -- MANUAL
                     ["Safe head"] = {
                         ["pitch"] = "Custom",
                         ["pitch_custom"] = 10,
@@ -857,8 +851,6 @@ LPH_NO_VIRTUALIZE(function ()
                         ["yaw_to"] = 180,
                         ["yaw_speed"] = 20
                     },
-                    -- MANUAL
-
                     ["Standing"] = {
                         ["pitch"] = "Custom",
                         ["pitch_custom"] = -45,
@@ -976,9 +968,6 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
-    --- Color
-    ---
     local color do
         local create_color, create_color_object, Color do
             Color = {} do
@@ -1162,9 +1151,7 @@ LPH_NO_VIRTUALIZE(function ()
         color = create_color
     end
 
-    ---
-    --- UI library
-    --- 
+
     local override = {} do
         local e_hotkey_mode = {
             [0] = "Always on",
@@ -1463,15 +1450,15 @@ LPH_NO_VIRTUALIZE(function ()
                 end
             end
 
-            return base64.encode(json.stringify(config_result)) .. '_BALENCIAGA'
+            return base64.encode(json.stringify(config_result)) .. '_PR0KLADKI'
         end
 
         function config_system.import_from_str(str, ...)
             local tabs = {...}
-            local BALENCIAGA_str = str:find("_BALENCIAGA")
+            local PR0KLADKI_str = str:find("_PR0KLADKI")
 
-            if BALENCIAGA_str then
-                str = str:sub(1, BALENCIAGA_str-1)
+            if PR0KLADKI_str then
+                str = str:sub(1, PR0KLADKI_str-1)
             end
 
             local status, config = pcall(base64.decode, str)
@@ -1510,7 +1497,7 @@ LPH_NO_VIRTUALIZE(function ()
         end
 
         function config_system:retrieve_local()
-            local db_data = database.read('balenciaga_config')
+            local db_data = database.read('pr0kladki_config')
         
             if db_data ~= nil and db_data[1] ~= nil then
                 self.import_from_str(db_data[1])
@@ -1520,7 +1507,7 @@ LPH_NO_VIRTUALIZE(function ()
         function config_system:save_local()
             local config_output = self.export_to_str()
 
-            database.write('balenciaga_config', {
+            database.write('pr0kladki_config', {
                 config_output
             })
 
@@ -1528,9 +1515,6 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
-    --- Reference
-    ---
     local reference do
         reference = {} do
             reference.ragebot = {} do
@@ -1597,13 +1581,10 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
-    --- Menu
-    --- 
     local config = {} 
 
     config.navigation = {} do
-        config.navigation.label = menu.new_item(ui.new_label, "AA", "Anti-aimbot angles", string.format('\v•  \rBALENCIAGA · %s · %s', user.name, user.role))
+        config.navigation.label = menu.new_item(ui.new_label, "AA", "Anti-aimbot angles", string.format('\v•  \rPR0KLADKI · %s · %s', user.name, user.role))
 
         config.navigation.tab = menu.new_item(ui.new_combobox, "AA", "Anti-aimbot angles", "Navigation: Tab", {
             "Anti-aimbot",
@@ -1615,9 +1596,6 @@ LPH_NO_VIRTUALIZE(function ()
         }):config_ignore()
     end
 
-    ---
-    --- FFI
-    ---
     local ffi_helpers do
         ffi_helpers = {} do
             ffi_helpers.get_client_entity = vtable_bind('client.dll', 'VClientEntityList003', 3, 'void*(__thiscall*)(void***, int)')
@@ -1688,7 +1666,7 @@ LPH_NO_VIRTUALIZE(function ()
                     ]]
                 end
 
-                ffi_helpers.activity.offset = 0x2950 --- @offset https://github.com/frk1/hazedumper/blob/master/csgo.json#L55
+                ffi_helpers.activity.offset = 0x2950 
                 ffi_helpers.activity.location = ffi.cast('bt_get_sequence', client.find_signature('client.dll', '\x55\x8B\xEC\x53\x8B\x5D\x08\x56\x8B\xF1\x83'))
 
                 ffi_helpers.activity.get = function (self, sequence, ent)
@@ -1739,9 +1717,7 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
     --- Player class
-    ---
     local player do
         local create_player, BaseLocal do
             BaseLocal = {} do
@@ -2183,9 +2159,7 @@ LPH_NO_VIRTUALIZE(function ()
         player = create_player()
     end
 
-    ---
     --- Fakelag
-    ---
     local fakelag do
         config.fakelag = {} do
             config.fakelag.enable = menu.new_item(ui.new_checkbox, "AA", "Fake lag", "Custom fakelag")
@@ -2272,9 +2246,8 @@ LPH_NO_VIRTUALIZE(function ()
         end
     end
 
-    ---
     --- Anti-aimbot angles
-    ---
+
     local antiaimbot do
         antiaimbot = {}
 
@@ -2290,7 +2263,7 @@ LPH_NO_VIRTUALIZE(function ()
             }):record("antiaimbot", "options"):save()
             
             config.antiaimbot.preset = menu.new_item(ui.new_combobox, "AA", "Anti-aimbot angles", "AA: Preset", {
-                "BALENCIAGA",
+                "PR0KLADKI",
                 "Blossom",
                 "Constructor"
             }):record("antiaimbot", "preset"):save()
@@ -4418,7 +4391,7 @@ LPH_NO_VIRTUALIZE(function ()
                     -- < label >
                     local indicator_accent = color(config.visuals.indicator_color:get())
 
-                    local indicator_label = 'BALENCIAGA'
+                    local indicator_label = 'PR0KLADKI'
 
                     renderer.text(indicator_position.x , indicator_position.y, 255, 255, 255, 255*ctx_alpha, '-', 0, indicator_label)
 
@@ -4575,7 +4548,7 @@ LPH_NO_VIRTUALIZE(function ()
                     end
 
                     local indicator_label_t = {
-                        {'BALENCIAGA', left_color:alpha_modulate(ctx_alpha, true)},
+                        {'PR0KLADKI', left_color:alpha_modulate(ctx_alpha, true)},
                         {'.', color.white:alpha_modulate(ctx_alpha, true)},
                         {'EBET', right_color:alpha_modulate(ctx_alpha, true)}
                     }
@@ -4585,7 +4558,7 @@ LPH_NO_VIRTUALIZE(function ()
                         indicator_label = string.format('%s\a%s%s', indicator_label, indicator_label_t[i][2]:to_hex(), indicator_label_t[i][1])
                     end
 
-                    local indicator_label_size = vector(renderer.measure_text('b', 'BALENCIAGA'))
+                    local indicator_label_size = vector(renderer.measure_text('b', 'PR0KLADKI'))
                     local scope_offset = indicator_label_size.x * 0.5 * scope_animation + scope_animation * 4
 
                     renderer.text(indicator_position.x + scope_offset - indicator_label_size.x * 0.5 + 1, indicator_position.y - indicator_label_size.y * 0.5, 255, 255, 255, 255, 'b', 0, indicator_label)
@@ -4747,8 +4720,8 @@ LPH_NO_VIRTUALIZE(function ()
                     local indicator_accent = color(config.visuals.indicator_color:get())
                     local indicator_renewed = color(config.visuals.indicator_renewed_color:get())
 
-                    local indicator_label = color.animated_text('BALENCIAGA', 1, indicator_renewed, indicator_accent, ctx_alpha*255)
-                    local indicator_label_size = vector(renderer.measure_text('b', 'BALENCIAGA'))
+                    local indicator_label = color.animated_text('PR0KLADKI', 1, indicator_renewed, indicator_accent, ctx_alpha*255)
+                    local indicator_label_size = vector(renderer.measure_text('b', 'PR0KLADKI'))
 
                     local scope_offset = indicator_label_size.x * 0.5 * scope_animation + scope_animation * 3
 
@@ -5082,7 +5055,7 @@ LPH_NO_VIRTUALIZE(function ()
                     return
                 end
 
-                renderer.text(screen_center.x, screen_size.y - 20, 255, 255, 255, 255, 'c', 0, 'BALENCIAGA')
+                renderer.text(screen_center.x, screen_size.y - 20, 255, 255, 255, 255, 'c', 0, 'PR0KLADKI')
             end)
 
             function visuals:player_hurt(event)
@@ -5202,7 +5175,7 @@ LPH_NO_VIRTUALIZE(function ()
                     return temp
                 end
 
-                local text = 'BALENCIAGA'
+                local text = 'PR0KLADKI'
                 local cache = ''
                 local chars = miscellaneous.clantag.build_tag(text)
                 local restored = false
@@ -5460,53 +5433,43 @@ LPH_NO_VIRTUALIZE(function ()
                 local counter = 0
                 local list = {
                     ['head'] = {
-                        'сосать / выродок',
-                        'подпик конечно / хуесос',
-                        '@balenciagaSKEET / tg',
-                        'завидуй мне хуесос / tg @balenciagaSKEET',
-                        'ты че тут делаешь?? / эта группа для крутых!',
-                        'Попадай мне в ноги пока твоя мать мне делает минет / 1',
-                        'еба тя расплющило жирнич / пиздец изи',
-                        'моя баленсочка бустиииииит / tg @balenciagaSKEET',
-                        'алло это скорая? тут такая ситуация парню который упал нужна скорая / ХАХАХАХААХ',
-                        'ну нет почему он ложится когда я прохожу / 1',
-                        'жаль конечно что против тебя играю, но куда деваться / скачай уже баленсу @balenciagaSKEET',
-                        'единицей свалился фуфлыжник / баленса лучшая',
-                        'your owner is BALENCIAGA / tg @balenciagaSKEET',
-                        'ты по легиту играешь ? / 1',
+                        'клиент обслужен. следующий',
+                        'где твой хэдшот, бро? а, точно, у меня',
+                        'заряда хватит на всех, тебя уже вычеркнул',
+                        'сори за спойлер, но ты мертв',
+                        'глаза опустил, как и твою хп-планку',
+                        'че так тихо? а, ты уже в спеке',
+                        'не вставай. это не просьба, а факт',
                     },
                     ['body'] = {
-                        'я не понял, ты такой жирный потому что дошики каждый день жрешь? / или че',
-                        '1 / изи',
-                        'упал хуета ебаная , в боди конечно забрал, да похуй все равно упал / @balenciagaSKEET',
-                        'улетел тапочек ебаный / как же изи',
-                        'я обоссал тебя / сосун',
-                        'Ты все еще без Balenciaga LUA? / Ты полный идиот',
-                        'неуважаемый, в тюрьме вы будете водолазом / tg @balenciagaSKEET',
-                        '@balenciagaSKEET / tg',
-                        'подрочи мне / через шортики хех',
-                        'моя баленсочка бустиииииит / tg @balenciagaSKEET',
+                        'живот подставил ну ты и лох',
+                        'в ноги стрелял? нет, просто ты упал',
+                        'дыши, если что ой, прости, нечем',
+                        'издеваюсь? нет, просто тренируюсь',
+                        'скоро приедет скорая  в виде моего напарника тебе в спину',
+                        'счет 1:0  в мою пользу, если что',
                     },
                     ['taser'] = {
-                        '1 / АХАХАХАХХАХАХАХАХА',
-                        'ААХАХХАХАХАХА / ХЫХВАПХПХВАПХВАХ',
-                        'ААХАХХАХАХАХА / tg @balenciagaSKEET',
+                        'бззз бззз. теле',
+                        'заряжен? теперь точно нет',
                     },
                     ['inferno'] = {
-                        'моя баленсочка бустиииииит / tg @balenciagaSKEET',
-                        '1 / tg @balenciagaSKEET',
+                        'с днем рождения! вот торт',
+                        'греешься? вечно тебе мало',
+                        'огонь очищает. особенно хп-бар',
                     },
                     ['hegrenade'] = {
-                        'закрой ебало грязная залупа / tg @balenciagaSKEET',
-                        'ИДИОТ ЗАХАХААХ / tg @balenciagaSKEET',
+                        'ловлю фраг / и твои конечности',
+                        'сюрприз из гранатного нектара',
+                        'угадай, что летит? правильно, твоя смерть',
                     },
                     ['death'] = {
-                        'чистый лак хуесос ебанный / я тебя выебу так и так',
-                        'додрочился сука / через шортики хех',
-                        'хуесос реально / tg @balenciagaSKEET',
+                        'я лишь зарядку потратил  а ты всё',
+                        'ну вот и встретились. на экране "Спектор"',
                     },
                     ['revenge'] = {
-                        '@balenciagaSKEET / tg',
+                        'увидимся... в killcam',
+                        'я это запомню и исправлю через 5 секунд',
                     }
                 }
                 local active = false
@@ -6023,7 +5986,7 @@ LPH_NO_VIRTUALIZE(function ()
             end
 
             function settings.EBATEL()
-                local success, err = config_system.import_from_str("eyJidWlsZGVyIjp7IkFBOjpTdGFuZGluZzo6Sml0dGVyVmFsdWUiOlswXSwiQUE6OlN0YW5kaW5nOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6OkFpciAmIENyb3VjaDo6UGl0Y2hDdXN0b20iOlswXSwiQUE6Ok1vdmluZzo6UGl0Y2giOlsiT2ZmIl0sIkFBOjpGYWtlIGxhZzo6WWF3QmFzZSI6WyJMb2NhbCB2aWV3Il0sIkFBOjpDcm91Y2hpbmc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpBaXI6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6RmFrZSBsYWc6OkJvZHlWYWx1ZSI6WzBdLCJBQTo6U3RhbmRpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpGYWtlIGxhZzo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6QWlyOjpZYXdTcGVlZCI6WzVdLCJBQTo6U3RhbmRpbmc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpHbG9iYWw6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U3RhbmRpbmc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpHbG9iYWw6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpDcm91Y2hpbmc6Ollhd0xlZnQiOlswXSwiQUE6OkNyb3VjaGluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OkNyb3VjaCBtb3Zpbmc6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpGYWtlIGxhZzo6Sml0dGVyVmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Qm9keVlhdyI6WyJPZmYiXSwiQUE6OkNyb3VjaCBtb3Zpbmc6Ollhd1NwZWVkIjpbNV0sIkFBOjpBaXI6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpDcm91Y2ggbW92aW5nOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6R2xvYmFsOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6Ollhd0RlbGF5IjpbNV0sIkFBOjpDcm91Y2hpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpNb3Zpbmc6Ollhd0N1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6OkJvZHlZYXciOlsiT2ZmIl0sIkFBOjpGYWtlIGxhZzo6WWF3TGVmdCI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0N1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd1R5cGUiOlsiT2ZmIl0sIkFBOjpBaXI6OlBpdGNoQ3VzdG9tIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdMZWZ0IjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdTd2l0Y2hEZWxheVNlY29uZCI6WzZdLCJBQTo6TW92aW5nOjpZYXdSaWdodCI6WzBdLCJBQTo6TW92aW5nOjpKaXR0ZXJWYWx1ZSI6WzBdLCJBQTo6QWlyOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0xlZnQiOlswXSwiQUE6OlNsb3ctbW90aW9uOjpZYXdEZWxheSI6WzVdLCJBQTo6QWlyOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6Ollhd0ppdHRlciI6WyJPZmYiXSwiQUE6OlN0YW5kaW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6QWlyOjpKaXR0ZXJWYWx1ZSI6WzBdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdTcGVlZCI6WzVdLCJBQTo6QWlyOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6RmFrZSBsYWc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpTdGFuZGluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkZha2UgbGFnOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6Q3JvdWNoaW5nOjpQaXRjaCI6WyJPZmYiXSwiQUE6OkNyb3VjaGluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkFpciAmIENyb3VjaDo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpNb3Zpbmc6Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpHbG9iYWw6Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpDcm91Y2ggbW92aW5nOjpKaXR0ZXJSYW5kb21pemUiOlswXSwiQUE6OkNyb3VjaGluZzo6WWF3RGVsYXkiOls1XSwiQUE6OkNyb3VjaGluZzo6UGl0Y2hDdXN0b20iOlswXSwiQUE6OkNyb3VjaCBtb3Zpbmc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1NwZWVkIjpbNV0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U3RhbmRpbmc6Ollhd0xlZnQiOlswXSwiQUE6OlN0YW5kaW5nOjpCb2R5VmFsdWUiOlswXSwiQUE6Okdsb2JhbDo6Qm9keVZhbHVlIjpbMF0sIkFBOjpDcm91Y2hpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6RmFrZSBsYWc6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpTbG93LW1vdGlvbjo6Sml0dGVyVmFsdWUiOlswXSwiQUE6OkZha2UgbGFnOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHQiOlswXSwiQUE6OkZha2UgbGFnOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6RmFrZSBsYWc6Ollhd1R5cGUiOlsiT2ZmIl0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdDdXN0b20iOlswXSwiQUE6OkFpciAmIENyb3VjaDo6Qm9keVZhbHVlIjpbMF0sIkFBOjpHbG9iYWw6OlBpdGNoIjpbIk9mZiJdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6R2xvYmFsOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6TW92aW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6Q3JvdWNoaW5nOjpCb2R5VmFsdWUiOlswXSwiQUE6OkNyb3VjaCBtb3Zpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OlNsb3ctbW90aW9uOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkFpcjo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpBaXI6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpNb3Zpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6R2xvYmFsOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6Qm9keVZhbHVlIjpbMF0sIkFBOjpTbG93LW1vdGlvbjo6UGl0Y2giOlsiT2ZmIl0sIkFBOjpDcm91Y2hpbmc6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6R2xvYmFsOjpZYXdSaWdodCI6WzBdLCJBQTo6Q3JvdWNoaW5nOjpZYXdTcGVlZCI6WzVdLCJBQTo6TW92aW5nOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6U3RhbmRpbmc6Ollhd1NwZWVkIjpbNV0sIkFBOjpDcm91Y2hpbmc6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6Ollhd0xlZnQiOlswXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3RGVsYXkiOls1XSwiQUE6Okdsb2JhbDo6WWF3TGVmdCI6WzBdLCJBQTo6U3RhbmRpbmc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0ppdHRlciI6WyJPZmYiXSwiQUE6Ok1vdmluZzo6WWF3U3BlZWQiOls1XSwiQUE6Okdsb2JhbDo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6TW92aW5nOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpDcm91Y2hpbmc6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpGYWtlIGxhZzo6WWF3RGVsYXkiOls1XSwiQUE6Ok1vdmluZzo6WWF3TGVmdCI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6RW5hYmxlZCI6W2ZhbHNlXSwiQUE6OkFpcjo6WWF3UmlnaHQiOlswXSwiQUE6OlNsb3ctbW90aW9uOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6QWlyOjpQaXRjaCI6WyJPZmYiXSwiQUE6Ok1vdmluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OlNsb3ctbW90aW9uOjpCb2R5VmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Qm9keVZhbHVlIjpbMF0sIkFBOjpTdGFuZGluZzo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6Ok1vdmluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkZha2UgbGFnOjpZYXdDdXN0b20iOlswXSwiQUE6Okdsb2JhbDo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkZha2UgbGFnOjpZYXdTd2l0Y2hEZWxheVNlY29uZCI6WzZdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6Ok1vdmluZzo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6OlN0YW5kaW5nOjpZYXdDdXN0b20iOlswXSwiQUE6OlN0YW5kaW5nOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1JpZ2h0IjpbMF0sIkFBOjpDcm91Y2hpbmc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpHbG9iYWw6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpTdGFuZGluZzo6UGl0Y2hDdXN0b20iOlswXSwiQUE6Ok1vdmluZzo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6R2xvYmFsOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6OkNyb3VjaGluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OlNsb3ctbW90aW9uOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6QWlyICYgQ3JvdWNoOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6Okdsb2JhbDo6WWF3U3BlZWQiOls1XSwiQUE6OkFpciAmIENyb3VjaDo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkFpciAmIENyb3VjaDo6Qm9keVlhdyI6WyJPZmYiXSwiQUE6Okdsb2JhbDo6WWF3RGVsYXkiOls1XSwiQUE6OkFpciAmIENyb3VjaDo6Sml0dGVyVmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6QWlyICYgQ3JvdWNoOjpQaXRjaCI6WyJPZmYiXSwiQUE6OkFpcjo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6Q3JvdWNoaW5nOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6QWlyOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdMZWZ0IjpbMF0sIkFBOjpBaXI6Ollhd0N1c3RvbSI6WzBdLCJBQTo6Q3JvdWNoaW5nOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6OkJvZHlWYWx1ZSI6WzBdLCJBQTo6RmFrZSBsYWc6Ollhd1NwZWVkIjpbNV0sIkFBOjpHbG9iYWw6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd1JpZ2h0IjpbMF19LCJ2aXN1YWxzIjp7ImluZGljYXRvcl92ZXJ0aWNhbF9vZmZzZXQiOlsyMF0sIm1hbnVhbF9hcnJvd3NfYWNjZW50IjpbMjU1LDAsMCwyNTVdLCJkYW1hZ2VfbWFya2VyIjpbdHJ1ZV0sImluZGljYXRvcnMiOlt0cnVlXSwicjhfaW5kaWNhdG9yX2NvbG9yIjpbMjU1LDAsMCwyNTVdLCJpbmRpY2F0b3Jfb3B0aW9ucyI6W1siVmVsb2NpdHkgbW9kaWZpZXIiLCJBZGp1c3Qgd2hpbGUgc2NvcGVkIiwiQWx0ZXIgYWxwaGEgd2hpbGUgc2NvcGVkIiwiQWx0ZXIgYWxwaGEgb24gZ3JlbmFkZSJdXSwiaW5kaWNhdG9yX2NvbG9yIjpbMjU1LDI1NSwyNTUsMjU1XSwicjhfaW5kaWNhdG9yIjpbZmFsc2VdLCJtYW51YWxfYXJyb3dzX29wdGlvbnMiOlt7fV0sIm1hbnVhbF9hcnJvd3Nfc2l6ZSI6WzEwXSwiaW5kaWNhdG9yX3N0eWxlIjpbIlJlbmV3ZWQiXSwibWFudWFsX2Fycm93c19vZmZzZXQiOlszNV0sIm1hbnVhbF9hcnJvd3NfY29sb3IiOls3Nyw3Nyw3NywyNTVdLCJtYW51YWxfYXJyb3dzIjpbZmFsc2VdLCJtYW51YWxfYXJyb3dzX3N0eWxlIjpbIlRyaWFuZ2xlcyJdLCJkYW1hZ2VfbWFya2VyX2NvbG9yIjpbMjU1LDAsMCwyNTVdLCJpbmRpY2F0b3JfcmVuZXdlZF9jb2xvciI6WzEzNywxMzcsMTM3LDI1NV19LCJhbnRpYWltYm90Ijp7ImRlZmVuc2l2ZV9jb25kaXRpb25zX2F1dG8iOltbIk9uIHBlZWsiLCJMZWdpdCBBQSIsIkVkZ2UgZGlyZWN0aW9uIiwiU2FmZSBoZWFkIiwiVHJpZ2dlcmVkIiwiU3RhbmRpbmciLCJTbG93LW1vdGlvbiIsIk1vdmluZyIsIkNyb3VjaGluZyIsIkNyb3VjaCBtb3ZpbmciLCJBaXIiLCJBaXIgJiBDcm91Y2giXV0sImlkZWFsX3RpY2siOltmYWxzZV0sIm1hbnVhbF95YXciOlt0cnVlXSwiYW5pbWF0aW9uX2JyZWFrZXJfYWlyIjpbIldhbGtpbmciXSwic2FmZV9oZWFkX2NvbmRpdGlvbnMiOltbIkFpciBrbmlmZSIsIkFpciB6ZXVzIiwiQWlyICYgQ3JvdWNoIiwiQ3JvdWNoIG1vdmluZyIsIkNyb3VjaGluZyIsIlNsb3ctbW90aW9uIiwiU3RhbmRpbmciXV0sInNhZmVfaGVhZCI6W3RydWVdLCJvcHRpb25zIjpbWyJPbiB1c2UgYW50aWFpbSIsIkZhc3QgbGFkZGVyIiwiRG9ybWFudCBwcmVzZXQiXV0sIndhcm11cF9hYV9jb25kaXRpb25zIjpbWyJXYXJtdXAiLCJSb3VuZCBlbmQiXV0sImFuaW1hdGlvbl9icmVha2VyX2xlZyI6WyJXYWxraW5nIl0sIm1hbnVhbF9vcHRpb25zIjpbWyJKaXR0ZXIgZGlzYWJsZWQiXV0sImZyZWVzdGFuZGluZ19kaXNhYmxlcl9zdGF0ZXMiOltbIkFpciIsIkFpciAmIENyb3VjaCJdXSwid2FybXVwX2FhIjpbdHJ1ZV0sImFuaW1hdGlvbl9icmVha2VyX290aGVyIjpbWyJRdWljayBwZWVrIGxlZ3MiLCJQaXRjaCB6ZXJvIG9uIGxhbmQiXV0sImFuaW1hdGlvbl9icmVha2VyIjpbdHJ1ZV0sImRlZmVuc2l2ZV9hYSI6W3RydWVdLCJhaXJfZXhwbG9pdCI6W2ZhbHNlXSwiZGVmZW5zaXZlX2NvbmRpdGlvbnMiOltbIkNyb3VjaGluZyIsIkNyb3VjaCBtb3ZpbmciLCJBaXIiLCJBaXIgJiBDcm91Y2giXV0sImlkZWFsX3RpY2tfaG90a2V5IjpbIk9uIGhvdGtleSJdLCJwcmVzZXQiOlsiQmxvc3NvbSJdLCJkZWZlbnNpdmVfdGFyZ2V0IjpbWyJEb3VibGUgdGFwIl1dLCJhaXJfZXhwbG9pdF9ob3RrZXkiOlsiT24gaG90a2V5Il0sImZzX29wdGlvbnMiOltbIkppdHRlciBkaXNhYmxlZCJdXSwiZGVmZW5zaXZlX3ByZXNldCI6WyJBdXRvIl0sImRlZmVuc2l2ZV90cmlnZ2VycyI6W1siRmxhc2hlZCIsIkRhbWFnZSByZWNlaXZlZCIsIlJlbG9hZGluZyIsIldlYXBvbiBzd2l0Y2giXV0sImZvcmNlX3RhcmdldF95YXciOlt0cnVlXX0sIm1pc2NlbGxhbmVvdXMiOnsiY2hlYXRfdHdlYWtzX2xpc3QiOltbIlVuY2hhcmdlIGhlbHBlciIsIlN1cGVyIHRvc3Mgb24gZ3JlbmFkZSByZWxlYXNlIiwiQWxsb3cgY3JvdWNoIG9uIGZha2VkdWNrIl1dLCJhdXRvbWF0aWNfdHAiOlt7fV0sImNsYW50YWciOltmYWxzZV0sInRyYXNodGFsayI6W2ZhbHNlXSwiY29uc29sZV9maWx0ZXIiOlt0cnVlXSwiYXV0b21hdGljX3RwX2RlbGF5IjpbMl0sImN1c3RvbV9vdXRwdXQiOlt0cnVlXSwiZXZlbnRfbG9nZ2VyIjpbdHJ1ZV0sImNoZWF0X3R3ZWFrcyI6W3RydWVdfSwiZGVmZW5zaXZlIjp7IkRFRjo6QWlyOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6T24gcGVlazo6UGl0Y2giOlsiRGVmYXVsdCJdLCJERUY6Ok9uIHBlZWs6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6R2xvYmFsOjpZYXdTcGVlZCI6WzFdLCJERUY6Okdsb2JhbDo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6TW92aW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6TGVnaXQgQUE6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OlN0YW5kaW5nOjpZYXdSYW5kb21pemUiOlswXSwiREVGOjpDcm91Y2hpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1NwZWVkIjpbMV0sIkRFRjo6R2xvYmFsOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6RWRnZSBkaXJlY3Rpb246OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6TW92aW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6TW92aW5nOjpZYXdUbyI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3TGVmdFRhcmdldCI6WzBdLCJERUY6OkxlZ2l0IEFBOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6Q3JvdWNoaW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdUbyI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpTbG93LW1vdGlvbjo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpNb3Zpbmc6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6Ok9uIHBlZWs6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkFpcjo6UGl0Y2hDdXN0b20iOls4OV0sIkRFRjo6R2xvYmFsOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OlN0YW5kaW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpBaXI6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdGcm9tIjpbMF0sIkRFRjo6TW92aW5nOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6TW92aW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6Okdsb2JhbDo6WWF3TGVmdFRhcmdldCI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpHbG9iYWw6Ollhd0xlZnQiOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3UmlnaHQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd0Zyb20iOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdTcGVlZCI6WzFdLCJERUY6OkNyb3VjaGluZzo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2FmZSBoZWFkOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OlRyaWdnZXJlZDo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpMZWdpdCBBQTo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6R2xvYmFsOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpBaXIgJiBDcm91Y2g6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkxlZ2l0IEFBOjpZYXdTcGVlZCI6WzFdLCJERUY6Ok1vdmluZzo6WWF3UmlnaHQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd0Zyb20iOlswXSwiREVGOjpNb3Zpbmc6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkFpcjo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OkxlZ2l0IEFBOjpZYXdMZWZ0IjpbMF0sIkRFRjo6R2xvYmFsOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OlN0YW5kaW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6QWlyOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6QWlyOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OkFpcjo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpDcm91Y2hpbmc6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdSaWdodCI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1JpZ2h0IjpbMF0sIkRFRjo6TGVnaXQgQUE6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3VG8iOlswXSwiREVGOjpPbiBwZWVrOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1NwZWVkIjpbMV0sIkRFRjo6U3RhbmRpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6U3RhbmRpbmc6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6QWlyOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3RGVsYXkiOls2XSwiREVGOjpMZWdpdCBBQTo6WWF3RnJvbSI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6QWlyOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OlNsb3ctbW90aW9uOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6Ok9uIHBlZWs6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6U3RhbmRpbmc6Ollhd1JpZ2h0U3RhcnQiOlswXSwiREVGOjpPbiBwZWVrOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OkxlZ2l0IEFBOjpZYXdEZWxheSI6WzZdLCJERUY6OkFpcjo6WWF3VG8iOlswXSwiREVGOjpTdGFuZGluZzo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpHbG9iYWw6Ollhd0RlbGF5IjpbNl0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpNb3Zpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3U3BlZWQiOlsxXSwiREVGOjpBaXI6Ollhd1NwZWVkIjpbMV0sIkRFRjo6RWRnZSBkaXJlY3Rpb246OlRhcmdldCI6W3t9XSwiREVGOjpNb3Zpbmc6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OlN0YW5kaW5nOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpNb3Zpbmc6Ollhd1NwZWVkIjpbMV0sIkRFRjo6U3RhbmRpbmc6Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd1JpZ2h0VGFyZ2V0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdSaWdodCI6WzBdLCJERUY6OkNyb3VjaGluZzo6UGl0Y2hDdXN0b20iOls4OV0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6UGl0Y2giOlsiRGVmYXVsdCJdLCJERUY6OkxlZ2l0IEFBOjpZYXdUbyI6WzBdLCJERUY6OkxlZ2l0IEFBOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6Okdsb2JhbDo6WWF3RnJvbSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0RlbGF5IjpbNl0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6TGVnaXQgQUE6Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd0xlZnQiOlswXSwiREVGOjpPbiBwZWVrOjpZYXdGcm9tIjpbMF0sIkRFRjo6TGVnaXQgQUE6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1RvIjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3VG8iOlswXSwiREVGOjpTbG93LW1vdGlvbjo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1RvIjpbMF0sIkRFRjo6T24gcGVlazo6WWF3RGVsYXkiOls2XSwiREVGOjpNb3Zpbmc6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnQiOlswXSwiREVGOjpHbG9iYWw6Ollhd1RvIjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3RnJvbSI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3U3BlZWQiOlsxXSwiREVGOjpTbG93LW1vdGlvbjo6WWF3UmlnaHQiOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3TGVmdCI6WzBdLCJERUY6OkxlZ2l0IEFBOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdMZWZ0U3RhcnQiOlswXSwiREVGOjpHbG9iYWw6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6QWlyOjpZYXdEZWxheSI6WzZdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0xlZnQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd1JpZ2h0IjpbMF0sIkRFRjo6TGVnaXQgQUE6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6QWlyOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6U3RhbmRpbmc6Ollhd1RvIjpbMF0sIkRFRjo6QWlyOjpZYXdSaWdodCI6WzBdLCJERUY6OkFpcjo6WWF3TGVmdCI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6T24gcGVlazo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpTdGFuZGluZzo6WWF3U3BlZWQiOlsxXSwiREVGOjpTdGFuZGluZzo6WWF3RGVsYXkiOls2XSwiREVGOjpMZWdpdCBBQTo6WWF3UmlnaHQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6OlBpdGNoIjpbIkRlZmF1bHQiXX0sIm1hbnVhbHMiOnsicmlnaHQiOlsiT24gaG90a2V5Il0sImxlZnQiOlsiT24gaG90a2V5Il0sImJhY2t3YXJkIjpbIk9uIGhvdGtleSJdLCJlZGdlIjpbIk9uIGhvdGtleSJdLCJmb3J3YXJkIjpbIk9uIGhvdGtleSJdLCJyZXNldCI6WyJPbiBob3RrZXkiXSwiZnJlZXN0YW5kaW5nIjpbIk9uIGhvdGtleSJdfSwiZmFrZWxhZyI6eyJlbmFibGUiOlt0cnVlXSwidGlja3MiOlsxNF0sInR5cGUiOlsiUmFuZG9taXplIl19fQ==_BALENCIAGA");
+                local success, err = config_system.import_from_str("eyJidWlsZGVyIjp7IkFBOjpTdGFuZGluZzo6Sml0dGVyVmFsdWUiOlswXSwiQUE6OlN0YW5kaW5nOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6OkFpciAmIENyb3VjaDo6UGl0Y2hDdXN0b20iOlswXSwiQUE6Ok1vdmluZzo6UGl0Y2giOlsiT2ZmIl0sIkFBOjpGYWtlIGxhZzo6WWF3QmFzZSI6WyJMb2NhbCB2aWV3Il0sIkFBOjpDcm91Y2hpbmc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpBaXI6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6RmFrZSBsYWc6OkJvZHlWYWx1ZSI6WzBdLCJBQTo6U3RhbmRpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpGYWtlIGxhZzo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6QWlyOjpZYXdTcGVlZCI6WzVdLCJBQTo6U3RhbmRpbmc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpHbG9iYWw6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U3RhbmRpbmc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpHbG9iYWw6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpDcm91Y2hpbmc6Ollhd0xlZnQiOlswXSwiQUE6OkNyb3VjaGluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OkNyb3VjaCBtb3Zpbmc6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpGYWtlIGxhZzo6Sml0dGVyVmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Qm9keVlhdyI6WyJPZmYiXSwiQUE6OkNyb3VjaCBtb3Zpbmc6Ollhd1NwZWVkIjpbNV0sIkFBOjpBaXI6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpDcm91Y2ggbW92aW5nOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6R2xvYmFsOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6Ollhd0RlbGF5IjpbNV0sIkFBOjpDcm91Y2hpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpNb3Zpbmc6Ollhd0N1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6OkJvZHlZYXciOlsiT2ZmIl0sIkFBOjpGYWtlIGxhZzo6WWF3TGVmdCI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0N1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd1R5cGUiOlsiT2ZmIl0sIkFBOjpBaXI6OlBpdGNoQ3VzdG9tIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdMZWZ0IjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdTd2l0Y2hEZWxheVNlY29uZCI6WzZdLCJBQTo6TW92aW5nOjpZYXdSaWdodCI6WzBdLCJBQTo6TW92aW5nOjpKaXR0ZXJWYWx1ZSI6WzBdLCJBQTo6QWlyOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0xlZnQiOlswXSwiQUE6OlNsb3ctbW90aW9uOjpZYXdEZWxheSI6WzVdLCJBQTo6QWlyOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6U3RhbmRpbmc6Ollhd0ppdHRlciI6WyJPZmYiXSwiQUE6OlN0YW5kaW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6QWlyOjpKaXR0ZXJWYWx1ZSI6WzBdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdTcGVlZCI6WzVdLCJBQTo6QWlyOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6RmFrZSBsYWc6OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpTdGFuZGluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkZha2UgbGFnOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6Q3JvdWNoaW5nOjpQaXRjaCI6WyJPZmYiXSwiQUE6OkNyb3VjaGluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkFpciAmIENyb3VjaDo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpNb3Zpbmc6Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpHbG9iYWw6Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpDcm91Y2ggbW92aW5nOjpKaXR0ZXJSYW5kb21pemUiOlswXSwiQUE6OkNyb3VjaGluZzo6WWF3RGVsYXkiOls1XSwiQUE6OkNyb3VjaGluZzo6UGl0Y2hDdXN0b20iOlswXSwiQUE6OkNyb3VjaCBtb3Zpbmc6OlBpdGNoIjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1NwZWVkIjpbNV0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U3RhbmRpbmc6Ollhd0xlZnQiOlswXSwiQUE6OlN0YW5kaW5nOjpCb2R5VmFsdWUiOlswXSwiQUE6Okdsb2JhbDo6Qm9keVZhbHVlIjpbMF0sIkFBOjpDcm91Y2hpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6RmFrZSBsYWc6Ollhd0RlbGF5ZWRTd2l0Y2giOltmYWxzZV0sIkFBOjpTbG93LW1vdGlvbjo6Sml0dGVyVmFsdWUiOlswXSwiQUE6OkZha2UgbGFnOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHQiOlswXSwiQUE6OkZha2UgbGFnOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6RmFrZSBsYWc6Ollhd1R5cGUiOlsiT2ZmIl0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdDdXN0b20iOlswXSwiQUE6OkFpciAmIENyb3VjaDo6Qm9keVZhbHVlIjpbMF0sIkFBOjpHbG9iYWw6OlBpdGNoIjpbIk9mZiJdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6R2xvYmFsOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6TW92aW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6Q3JvdWNoaW5nOjpCb2R5VmFsdWUiOlswXSwiQUE6OkNyb3VjaCBtb3Zpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OlNsb3ctbW90aW9uOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdEZWxheSI6WzVdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3U3dpdGNoRGVsYXkiOls2XSwiQUE6OkFpcjo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpBaXI6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpNb3Zpbmc6Ollhd0Jhc2UiOlsiTG9jYWwgdmlldyJdLCJBQTo6R2xvYmFsOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6RmFrZSBsYWc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6Qm9keVZhbHVlIjpbMF0sIkFBOjpTbG93LW1vdGlvbjo6UGl0Y2giOlsiT2ZmIl0sIkFBOjpDcm91Y2hpbmc6Ollhd0N1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6R2xvYmFsOjpZYXdSaWdodCI6WzBdLCJBQTo6Q3JvdWNoaW5nOjpZYXdTcGVlZCI6WzVdLCJBQTo6TW92aW5nOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6U3RhbmRpbmc6Ollhd1NwZWVkIjpbNV0sIkFBOjpDcm91Y2hpbmc6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6Ollhd0xlZnQiOlswXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3RGVsYXkiOls1XSwiQUE6Okdsb2JhbDo6WWF3TGVmdCI6WzBdLCJBQTo6U3RhbmRpbmc6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd0ppdHRlciI6WyJPZmYiXSwiQUE6Ok1vdmluZzo6WWF3U3BlZWQiOls1XSwiQUE6Okdsb2JhbDo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OkFpciAmIENyb3VjaDo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6TW92aW5nOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246OkVuYWJsZWQiOltmYWxzZV0sIkFBOjpDcm91Y2hpbmc6Ollhd1N3aXRjaERlbGF5U2Vjb25kIjpbNl0sIkFBOjpGYWtlIGxhZzo6WWF3RGVsYXkiOls1XSwiQUE6Ok1vdmluZzo6WWF3TGVmdCI6WzBdLCJBQTo6Q3JvdWNoIG1vdmluZzo6RW5hYmxlZCI6W2ZhbHNlXSwiQUE6OkFpcjo6WWF3UmlnaHQiOlswXSwiQUE6OlNsb3ctbW90aW9uOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6QWlyOjpQaXRjaCI6WyJPZmYiXSwiQUE6Ok1vdmluZzo6WWF3VHlwZSI6WyJPZmYiXSwiQUE6OlNsb3ctbW90aW9uOjpCb2R5VmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Qm9keVZhbHVlIjpbMF0sIkFBOjpTdGFuZGluZzo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6Ok1vdmluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkZha2UgbGFnOjpZYXdDdXN0b20iOlswXSwiQUE6Okdsb2JhbDo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkZha2UgbGFnOjpZYXdTd2l0Y2hEZWxheVNlY29uZCI6WzZdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6Ok1vdmluZzo6WWF3U3dpdGNoRGVsYXlTZWNvbmQiOls2XSwiQUE6OlN0YW5kaW5nOjpZYXdDdXN0b20iOlswXSwiQUE6OlN0YW5kaW5nOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1JpZ2h0IjpbMF0sIkFBOjpDcm91Y2hpbmc6Ollhd1JpZ2h0IjpbMF0sIkFBOjpHbG9iYWw6OkppdHRlclZhbHVlIjpbMF0sIkFBOjpTdGFuZGluZzo6UGl0Y2hDdXN0b20iOlswXSwiQUE6Ok1vdmluZzo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6R2xvYmFsOjpZYXdCYXNlIjpbIkxvY2FsIHZpZXciXSwiQUE6OkNyb3VjaGluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OlNsb3ctbW90aW9uOjpZYXdUeXBlIjpbIk9mZiJdLCJBQTo6QWlyICYgQ3JvdWNoOjpFbmFibGVkIjpbZmFsc2VdLCJBQTo6Q3JvdWNoIG1vdmluZzo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6Okdsb2JhbDo6WWF3U3BlZWQiOls1XSwiQUE6OkFpciAmIENyb3VjaDo6WWF3RGVsYXllZFN3aXRjaCI6W2ZhbHNlXSwiQUE6OkFpciAmIENyb3VjaDo6Qm9keVlhdyI6WyJPZmYiXSwiQUE6Okdsb2JhbDo6WWF3RGVsYXkiOls1XSwiQUE6OkFpciAmIENyb3VjaDo6Sml0dGVyVmFsdWUiOlswXSwiQUE6Ok1vdmluZzo6Sml0dGVyUmFuZG9taXplIjpbMF0sIkFBOjpDcm91Y2ggbW92aW5nOjpQaXRjaEN1c3RvbSI6WzBdLCJBQTo6QWlyICYgQ3JvdWNoOjpQaXRjaCI6WyJPZmYiXSwiQUE6OkFpcjo6WWF3Sml0dGVyIjpbIk9mZiJdLCJBQTo6Q3JvdWNoaW5nOjpCb2R5WWF3IjpbIk9mZiJdLCJBQTo6QWlyOjpZYXdTd2l0Y2hEZWxheSI6WzZdLCJBQTo6QWlyICYgQ3JvdWNoOjpZYXdMZWZ0IjpbMF0sIkFBOjpBaXI6Ollhd0N1c3RvbSI6WzBdLCJBQTo6Q3JvdWNoaW5nOjpZYXdKaXR0ZXIiOlsiT2ZmIl0sIkFBOjpBaXI6OkJvZHlWYWx1ZSI6WzBdLCJBQTo6RmFrZSBsYWc6Ollhd1NwZWVkIjpbNV0sIkFBOjpHbG9iYWw6OkppdHRlclJhbmRvbWl6ZSI6WzBdLCJBQTo6U2xvdy1tb3Rpb246Ollhd1N3aXRjaERlbGF5IjpbNl0sIkFBOjpBaXIgJiBDcm91Y2g6Ollhd1JpZ2h0IjpbMF19LCJ2aXN1YWxzIjp7ImluZGljYXRvcl92ZXJ0aWNhbF9vZmZzZXQiOlsyMF0sIm1hbnVhbF9hcnJvd3NfYWNjZW50IjpbMjU1LDAsMCwyNTVdLCJkYW1hZ2VfbWFya2VyIjpbdHJ1ZV0sImluZGljYXRvcnMiOlt0cnVlXSwicjhfaW5kaWNhdG9yX2NvbG9yIjpbMjU1LDAsMCwyNTVdLCJpbmRpY2F0b3Jfb3B0aW9ucyI6W1siVmVsb2NpdHkgbW9kaWZpZXIiLCJBZGp1c3Qgd2hpbGUgc2NvcGVkIiwiQWx0ZXIgYWxwaGEgd2hpbGUgc2NvcGVkIiwiQWx0ZXIgYWxwaGEgb24gZ3JlbmFkZSJdXSwiaW5kaWNhdG9yX2NvbG9yIjpbMjU1LDI1NSwyNTUsMjU1XSwicjhfaW5kaWNhdG9yIjpbZmFsc2VdLCJtYW51YWxfYXJyb3dzX29wdGlvbnMiOlt7fV0sIm1hbnVhbF9hcnJvd3Nfc2l6ZSI6WzEwXSwiaW5kaWNhdG9yX3N0eWxlIjpbIlJlbmV3ZWQiXSwibWFudWFsX2Fycm93c19vZmZzZXQiOlszNV0sIm1hbnVhbF9hcnJvd3NfY29sb3IiOls3Nyw3Nyw3NywyNTVdLCJtYW51YWxfYXJyb3dzIjpbZmFsc2VdLCJtYW51YWxfYXJyb3dzX3N0eWxlIjpbIlRyaWFuZ2xlcyJdLCJkYW1hZ2VfbWFya2VyX2NvbG9yIjpbMjU1LDAsMCwyNTVdLCJpbmRpY2F0b3JfcmVuZXdlZF9jb2xvciI6WzEzNywxMzcsMTM3LDI1NV19LCJhbnRpYWltYm90Ijp7ImRlZmVuc2l2ZV9jb25kaXRpb25zX2F1dG8iOltbIk9uIHBlZWsiLCJMZWdpdCBBQSIsIkVkZ2UgZGlyZWN0aW9uIiwiU2FmZSBoZWFkIiwiVHJpZ2dlcmVkIiwiU3RhbmRpbmciLCJTbG93LW1vdGlvbiIsIk1vdmluZyIsIkNyb3VjaGluZyIsIkNyb3VjaCBtb3ZpbmciLCJBaXIiLCJBaXIgJiBDcm91Y2giXV0sImlkZWFsX3RpY2siOltmYWxzZV0sIm1hbnVhbF95YXciOlt0cnVlXSwiYW5pbWF0aW9uX2JyZWFrZXJfYWlyIjpbIldhbGtpbmciXSwic2FmZV9oZWFkX2NvbmRpdGlvbnMiOltbIkFpciBrbmlmZSIsIkFpciB6ZXVzIiwiQWlyICYgQ3JvdWNoIiwiQ3JvdWNoIG1vdmluZyIsIkNyb3VjaGluZyIsIlNsb3ctbW90aW9uIiwiU3RhbmRpbmciXV0sInNhZmVfaGVhZCI6W3RydWVdLCJvcHRpb25zIjpbWyJPbiB1c2UgYW50aWFpbSIsIkZhc3QgbGFkZGVyIiwiRG9ybWFudCBwcmVzZXQiXV0sIndhcm11cF9hYV9jb25kaXRpb25zIjpbWyJXYXJtdXAiLCJSb3VuZCBlbmQiXV0sImFuaW1hdGlvbl9icmVha2VyX2xlZyI6WyJXYWxraW5nIl0sIm1hbnVhbF9vcHRpb25zIjpbWyJKaXR0ZXIgZGlzYWJsZWQiXV0sImZyZWVzdGFuZGluZ19kaXNhYmxlcl9zdGF0ZXMiOltbIkFpciIsIkFpciAmIENyb3VjaCJdXSwid2FybXVwX2FhIjpbdHJ1ZV0sImFuaW1hdGlvbl9icmVha2VyX290aGVyIjpbWyJRdWljayBwZWVrIGxlZ3MiLCJQaXRjaCB6ZXJvIG9uIGxhbmQiXV0sImFuaW1hdGlvbl9icmVha2VyIjpbdHJ1ZV0sImRlZmVuc2l2ZV9hYSI6W3RydWVdLCJhaXJfZXhwbG9pdCI6W2ZhbHNlXSwiZGVmZW5zaXZlX2NvbmRpdGlvbnMiOltbIkNyb3VjaGluZyIsIkNyb3VjaCBtb3ZpbmciLCJBaXIiLCJBaXIgJiBDcm91Y2giXV0sImlkZWFsX3RpY2tfaG90a2V5IjpbIk9uIGhvdGtleSJdLCJwcmVzZXQiOlsiQmxvc3NvbSJdLCJkZWZlbnNpdmVfdGFyZ2V0IjpbWyJEb3VibGUgdGFwIl1dLCJhaXJfZXhwbG9pdF9ob3RrZXkiOlsiT24gaG90a2V5Il0sImZzX29wdGlvbnMiOltbIkppdHRlciBkaXNhYmxlZCJdXSwiZGVmZW5zaXZlX3ByZXNldCI6WyJBdXRvIl0sImRlZmVuc2l2ZV90cmlnZ2VycyI6W1siRmxhc2hlZCIsIkRhbWFnZSByZWNlaXZlZCIsIlJlbG9hZGluZyIsIldlYXBvbiBzd2l0Y2giXV0sImZvcmNlX3RhcmdldF95YXciOlt0cnVlXX0sIm1pc2NlbGxhbmVvdXMiOnsiY2hlYXRfdHdlYWtzX2xpc3QiOltbIlVuY2hhcmdlIGhlbHBlciIsIlN1cGVyIHRvc3Mgb24gZ3JlbmFkZSByZWxlYXNlIiwiQWxsb3cgY3JvdWNoIG9uIGZha2VkdWNrIl1dLCJhdXRvbWF0aWNfdHAiOlt7fV0sImNsYW50YWciOltmYWxzZV0sInRyYXNodGFsayI6W2ZhbHNlXSwiY29uc29sZV9maWx0ZXIiOlt0cnVlXSwiYXV0b21hdGljX3RwX2RlbGF5IjpbMl0sImN1c3RvbV9vdXRwdXQiOlt0cnVlXSwiZXZlbnRfbG9nZ2VyIjpbdHJ1ZV0sImNoZWF0X3R3ZWFrcyI6W3RydWVdfSwiZGVmZW5zaXZlIjp7IkRFRjo6QWlyOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6T24gcGVlazo6UGl0Y2giOlsiRGVmYXVsdCJdLCJERUY6Ok9uIHBlZWs6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6R2xvYmFsOjpZYXdTcGVlZCI6WzFdLCJERUY6Okdsb2JhbDo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6TW92aW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6TGVnaXQgQUE6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OlN0YW5kaW5nOjpZYXdSYW5kb21pemUiOlswXSwiREVGOjpDcm91Y2hpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1NwZWVkIjpbMV0sIkRFRjo6R2xvYmFsOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6RWRnZSBkaXJlY3Rpb246OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6TW92aW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6TW92aW5nOjpZYXdUbyI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3TGVmdFRhcmdldCI6WzBdLCJERUY6OkxlZ2l0IEFBOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6Q3JvdWNoaW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdUbyI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpTbG93LW1vdGlvbjo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpNb3Zpbmc6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6Ok9uIHBlZWs6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkFpcjo6UGl0Y2hDdXN0b20iOls4OV0sIkRFRjo6R2xvYmFsOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OlN0YW5kaW5nOjpQaXRjaCI6WyJEZWZhdWx0Il0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpBaXI6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdGcm9tIjpbMF0sIkRFRjo6TW92aW5nOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6TW92aW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6Okdsb2JhbDo6WWF3TGVmdFRhcmdldCI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpHbG9iYWw6Ollhd0xlZnQiOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3UmlnaHQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd0Zyb20iOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdTcGVlZCI6WzFdLCJERUY6OkNyb3VjaGluZzo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OlNsb3ctbW90aW9uOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2FmZSBoZWFkOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OlRyaWdnZXJlZDo6RW5hYmxlZCI6W2ZhbHNlXSwiREVGOjpMZWdpdCBBQTo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6R2xvYmFsOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpBaXIgJiBDcm91Y2g6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkxlZ2l0IEFBOjpZYXdTcGVlZCI6WzFdLCJERUY6Ok1vdmluZzo6WWF3UmlnaHQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd0Zyb20iOlswXSwiREVGOjpNb3Zpbmc6OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OkFpcjo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OkxlZ2l0IEFBOjpZYXdMZWZ0IjpbMF0sIkRFRjo6R2xvYmFsOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OlN0YW5kaW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6QWlyOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdMZWZ0IjpbMF0sIkRFRjo6QWlyOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OkFpcjo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpDcm91Y2hpbmc6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdSaWdodCI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1JpZ2h0IjpbMF0sIkRFRjo6TGVnaXQgQUE6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3VG8iOlswXSwiREVGOjpPbiBwZWVrOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1NwZWVkIjpbMV0sIkRFRjo6U3RhbmRpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6U3RhbmRpbmc6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6QWlyOjpZYXciOlsiRGVmYXVsdCJdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3RGVsYXkiOls2XSwiREVGOjpMZWdpdCBBQTo6WWF3RnJvbSI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0RlbGF5IjpbNl0sIkRFRjo6QWlyOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246OlBpdGNoQ3VzdG9tIjpbODldLCJERUY6OlNsb3ctbW90aW9uOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6Ok9uIHBlZWs6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6U3RhbmRpbmc6Ollhd1JpZ2h0U3RhcnQiOlswXSwiREVGOjpPbiBwZWVrOjpFbmFibGVkIjpbZmFsc2VdLCJERUY6OkxlZ2l0IEFBOjpZYXdEZWxheSI6WzZdLCJERUY6OkFpcjo6WWF3VG8iOlswXSwiREVGOjpTdGFuZGluZzo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpHbG9iYWw6Ollhd0RlbGF5IjpbNl0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpNb3Zpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3U3BlZWQiOlsxXSwiREVGOjpBaXI6Ollhd1NwZWVkIjpbMV0sIkRFRjo6RWRnZSBkaXJlY3Rpb246OlRhcmdldCI6W3t9XSwiREVGOjpNb3Zpbmc6Ollhd1JhbmRvbWl6ZSI6WzBdLCJERUY6OlN0YW5kaW5nOjpQaXRjaEN1c3RvbSI6Wzg5XSwiREVGOjpNb3Zpbmc6Ollhd1NwZWVkIjpbMV0sIkRFRjo6U3RhbmRpbmc6Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpNb3Zpbmc6Ollhd1JpZ2h0VGFyZ2V0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdSaWdodCI6WzBdLCJERUY6OkNyb3VjaGluZzo6UGl0Y2hDdXN0b20iOls4OV0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6UGl0Y2giOlsiRGVmYXVsdCJdLCJERUY6OkxlZ2l0IEFBOjpZYXdUbyI6WzBdLCJERUY6OkxlZ2l0IEFBOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6OlN0YW5kaW5nOjpZYXdSaWdodFRhcmdldCI6WzBdLCJERUY6Okdsb2JhbDo6WWF3RnJvbSI6WzBdLCJERUY6Okdsb2JhbDo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0RlbGF5IjpbNl0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmFuZG9taXplIjpbMF0sIkRFRjo6TGVnaXQgQUE6Ollhd0xlZnRUYXJnZXQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd0xlZnQiOlswXSwiREVGOjpPbiBwZWVrOjpZYXdGcm9tIjpbMF0sIkRFRjo6TGVnaXQgQUE6Ollhd0xlZnRTdGFydCI6WzBdLCJERUY6Ok9uIHBlZWs6Ollhd1RvIjpbMF0sIkRFRjo6Q3JvdWNoaW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3VG8iOlswXSwiREVGOjpTbG93LW1vdGlvbjo6WWF3IjpbIkRlZmF1bHQiXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdGcm9tIjpbMF0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd1RvIjpbMF0sIkRFRjo6T24gcGVlazo6WWF3RGVsYXkiOls2XSwiREVGOjpNb3Zpbmc6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6U2xvdy1tb3Rpb246Ollhd0xlZnQiOlswXSwiREVGOjpHbG9iYWw6Ollhd1RvIjpbMF0sIkRFRjo6Q3JvdWNoIG1vdmluZzo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3RnJvbSI6WzBdLCJERUY6OkFpciAmIENyb3VjaDo6WWF3U3BlZWQiOlsxXSwiREVGOjpTbG93LW1vdGlvbjo6WWF3UmlnaHQiOlswXSwiREVGOjpDcm91Y2ggbW92aW5nOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3TGVmdCI6WzBdLCJERUY6OkxlZ2l0IEFBOjpZYXdSaWdodFN0YXJ0IjpbMF0sIkRFRjo6T24gcGVlazo6WWF3UmlnaHRTdGFydCI6WzBdLCJERUY6OkNyb3VjaGluZzo6WWF3TGVmdFN0YXJ0IjpbMF0sIkRFRjo6QWlyICYgQ3JvdWNoOjpZYXdMZWZ0U3RhcnQiOlswXSwiREVGOjpHbG9iYWw6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6QWlyOjpZYXdEZWxheSI6WzZdLCJERUY6OkNyb3VjaCBtb3Zpbmc6Ollhd0xlZnQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6Ollhd1JpZ2h0IjpbMF0sIkRFRjo6TGVnaXQgQUE6OllhdyI6WyJEZWZhdWx0Il0sIkRFRjo6QWlyOjpZYXdMZWZ0VGFyZ2V0IjpbMF0sIkRFRjo6U3RhbmRpbmc6Ollhd1RvIjpbMF0sIkRFRjo6QWlyOjpZYXdSaWdodCI6WzBdLCJERUY6OkFpcjo6WWF3TGVmdCI6WzBdLCJERUY6OkNyb3VjaCBtb3Zpbmc6OkVuYWJsZWQiOltmYWxzZV0sIkRFRjo6T24gcGVlazo6WWF3UmlnaHRUYXJnZXQiOlswXSwiREVGOjpTdGFuZGluZzo6WWF3U3BlZWQiOlsxXSwiREVGOjpTdGFuZGluZzo6WWF3RGVsYXkiOls2XSwiREVGOjpMZWdpdCBBQTo6WWF3UmlnaHQiOlswXSwiREVGOjpBaXIgJiBDcm91Y2g6OlBpdGNoIjpbIkRlZmF1bHQiXX0sIm1hbnVhbHMiOnsicmlnaHQiOlsiT24gaG90a2V5Il0sImxlZnQiOlsiT24gaG90a2V5Il0sImJhY2t3YXJkIjpbIk9uIGhvdGtleSJdLCJlZGdlIjpbIk9uIGhvdGtleSJdLCJmb3J3YXJkIjpbIk9uIGhvdGtleSJdLCJyZXNldCI6WyJPbiBob3RrZXkiXSwiZnJlZXN0YW5kaW5nIjpbIk9uIGhvdGtleSJdfSwiZmFrZWxhZyI6eyJlbmFibGUiOlt0cnVlXSwidGlja3MiOlsxNF0sInR5cGUiOlsiUmFuZG9taXplIl19fQ==_PR0KLADKI");
 
                 if not success then
                     return c_logger.log_error('Failed to load builtin config due to [%s]', err)
@@ -6062,7 +6025,7 @@ LPH_NO_VIRTUALIZE(function ()
 
 
         antiaim_presets = {} do
-            local database_name = 'BALENCIAGA_presets'
+            local database_name = 'PR0KLADKI_presets'
             local list = {}
 
             local create_preset, Preset do
@@ -6153,7 +6116,7 @@ LPH_NO_VIRTUALIZE(function ()
                 local target = c_string.trim(name)
 
                 local success, result = pcall(function (...)
-                    return ('%s_balenciaga'):format(config_system.export_to_str("builder", "defensive"))
+                    return ('%s_pr0kladki'):format(config_system.export_to_str("builder", "defensive"))
                 end)
 
                 if not success then
@@ -6434,7 +6397,7 @@ LPH_NO_VIRTUALIZE(function ()
                 return t[1]
             end
 
-            local label = transform(string.format('BALENCIAGA : %s', user.role))
+            local label = transform(string.format('PR0KLADKI : %s', user.role))
             local menu_color = ui.reference("MISC", "Settings", "Menu color")
 
             menu_state.label = (function ()
@@ -6899,7 +6862,7 @@ end)()
 
 
 
-local balenciaga = "best"
+local pr0kladki = "best"
 
 local ffi = require('ffi')
 local bit = require("bit")
@@ -7132,7 +7095,7 @@ end
 
 function log_debug(message)
     if adaptive_resolver.debug_mode then
-        client.color_log(255, 255, 255, "[BALENCIAGA Logs] " .. tostring(message))
+        client.color_log(255, 255, 255, "[PR0KLADKI Logs] " .. tostring(message))
     end
 end
 
@@ -7272,7 +7235,7 @@ client.set_event_callback("paint", function()
     renderer.rectangle(0, 0, screen_w, screen_h, r, g, b, alpha_to_use)
 end)
 
-local ui_resolver_enabled = ui.new_checkbox("LUA", "B", " ›  Enable \a778899F BALENCIAGA \aD3D3D3FFResolver", true)
+local ui_resolver_enabled = ui.new_checkbox("LUA", "B", " ›  Enable \a778899F PR0KLADKI \aD3D3D3FFResolver", true)
 local ui_mode_select = ui.new_combobox("LUA", "B", "Preset", {"Default", "Custom"})
 local ui_show_settings = ui.new_checkbox("LUA", "B", "Show settings ❓")
 
@@ -7423,7 +7386,7 @@ local ui_clear_resolver_memory = ui.new_button("PLAYERS", "Adjustments", "\a9090
         plist.set(enemy, "Override preferred hitbox", nil)
     end
     ]]--
-    client.color_log(0, 255, 0, "[BALENCIAGA] All resolver memory and player data cleared successfully")
+    client.color_log(0, 255, 0, "[PR0KLADKI] All resolver memory and player data cleared successfully")
 end)
 
 local function export_config()
@@ -7433,30 +7396,30 @@ local function export_config()
     end
     local json_str = json.stringify(config)
     clipboard.set(json_str)
-    client.color_log(0, 255, 0, "[BALENCIAGA] Настройки экспортированы в буфер обмена")
+    client.color_log(0, 255, 0, "[PR0KLADKI] Настройки экспортированы в буфер обмена")
 end
 
 
 local function import_config()
     local json_str = clipboard.get()
     if not json_str or json_str == "" then
-        client.color_log(255, 120, 120, "[BALENCIAGA] Буфер обмена пуст")
+        client.color_log(255, 120, 120, "[PR0KLADKI] Clipboard cleared.")
         return
     end
     local status, config = pcall(json.parse, json_str)
     if not status or type(config) ~= "table" then
-        client.color_log(255, 120, 120, "[] Ошибка импорта: Неверный формат настроек")
+        client.color_log(255, 120, 120, "[] Import error: Wrong preset format")
         return
     end
     for key, value in pairs(config) do
         if ui_elements[key] then
             local success, err = pcall(ui.set, ui_elements[key], value)
             if not success then
-                client.color_log(255, 120, 120, "[BALENCIAGA] Ошибка при установке " .. key .. ": " .. err)
+                client.color_log(255, 120, 120, "[PR0KLADKI] Error " .. key .. ": " .. err)
             end
         end
     end
-    client.color_log(0, 255, 0, "[BALENCIAGA] Настройки импортированы из буфера обмена")
+    client.color_log(0, 255, 0, "[PR0KLADKI] Imported from Clipboard")
 end
 
 
@@ -7478,26 +7441,40 @@ end
 
 
 local clantag_frames = {
-    "B",
-    "BA",
-    "BAL",
-    "BALE",
-    "BALEN",
-    "BALENC",
-    "BALENCI",
-    "BALENCIA",
-    "BALENCIAG",
-    "BALENCIAGA",
-    "BALENCIAGA V",
-    "BALENCIAGA V2",
-    "BALENCIAGA V2",
-    "<<<<<V2<<<<",
-    "<<<<<V2<<<<",
-    ">>>>>V2>>>>",
-    ">>>>>V2>>>>",
-    "BALENCIAGA V2",
-    "BALENCIAGA V2",
-    "BALENCIAGA V2",
+    "p",
+    "Pr",
+    "pr0",
+    "Pr0k",
+    "Pr0kl",
+    "Pr0kla",
+    "Pr0klad",
+    "Pr0kladk",
+    "Pr0kladki",
+    "Pr0kladki b",
+    "Pr0kladki bU",
+    "Pr0kladki Bus",
+    "Pr0kladki bust",
+    "Pr0kladki bust1",
+    "Pr0kladki bustI",
+    "Pr0kladki bustit",
+    "Pr0kladki bustit",
+    "Pr0kladki bustit",
+    "Pr0kladki bustit",
+    "Pr0kladki bustit",
+    "Pr0kladki busti",
+    "Pr0kladki bust",
+    "Pr0kladki bus",
+    "Pr0kladki bu",
+    "Pr0kladki b",
+    "Pr0kladki",
+    "Pr0kladk",
+    "Pr0klad",
+    "Pr0kl",
+    "Pr0k",
+    "Pr0",
+    "pr",
+    "p",
+    ""
 }
 
 local clantag_frame_delay = 0.2
@@ -7689,11 +7666,6 @@ local function update_enemy_data()
     end
 end
 
-
-
-
-
-
 --
 client.set_event_callback("player_connect_full", function(e)
     local ent = client.userid_to_entindex(e.userid)
@@ -7761,31 +7733,15 @@ local coder_smiley = smileys[math.random(1, #smileys)]
 local support_smiley = smileys[math.random(1, #smileys)]
 local tst_smiley = sad_smileys[math.random(1, #sad_smileys)]
 
-
--- ui.new_label("LUA", "B", "⌚ Sub expiration:\a90EE90FF Never \a90909040" .. version_smiley)
-
 ui.new_label("LUA", "B", "                                        ")
-ui.new_label("LUA", "B", "⚙ Version:\a90EE90FF v2 \a90909040" .. coder_smiley)
+ui.new_label("LUA", "B", "⚙ Version:\a90EE90FF v1.4 \a90909040" .. coder_smiley)
 ui.new_label("LUA", "B", "                                        ")
-ui.new_label("LUA", "B", "✨ Coder:\aDC143CFF balenciaga \a90909040" .. support_smiley) -- ; \aDC143CFFАгент \a90909040
-ui.new_label("LUA", "B", "                                        ")
-ui.new_label("LUA", "B", "❗ Support:\aDC143CFF @balenciagaSKEET \a90909040" .. tst_smiley)
+ui.new_label("LUA", "B", "✨ Coder:\aDC143CFF Gr1c3nd0 \a90909040" .. support_smiley) -- ; \aDC143CFFАгент \a90909040
 
 local function init_random_seed()
     math.randomseed(client.unix_time())
 end
 init_random_seed()
-
-
-local function set_random_labels()
-    local version_smiley = smileys[math.random(1, #smileys)]
-
-
-    ui.new_label("LUA", "B", "\a90909040♪ Song of the day: " .. version_smiley)
-end
-
-
-set_random_labels()
 
 do
     local ffi = require("ffi")
@@ -7859,9 +7815,6 @@ do
     {menu =  gamesense_follow, depend = {{gamesense_enabled, true}}},
 
 }
-
-
-
 
 
 for _, dep in ipairs(dependencies1) do
@@ -7996,9 +7949,9 @@ end
 
 
 client.set_event_callback("paint_ui", function()
-    local text = " Last update: 10.11.25"
+    local text = " Last update: 14 .11.25"
     local prefix = "\aD3D3D399 Last Update: "
-    local gradient_part = "10.11.25"
+    local gradient_part = "14.11.25"
     local width = 8
     local final_text = prefix
     local gradient_count = 0
@@ -8086,7 +8039,7 @@ local function table_contains(tab, val)
 end
 
 
-local utils = {} -- 💀💀
+local utils = {}
 utils.lerp = function(start, end_pos, time, ampl)
     if (start == end_pos) then return end_pos end
     ampl = ampl or (1 / globals.frametime())
@@ -8134,7 +8087,7 @@ screen.center = vector(client.screen_size()) * 0.5
 local colors = {}
 colors.watermark = {
     Text = color(160, 120, 220, 185), --  фиол
-    Background = color(0, 0, 0, 77) -- 30%
+    Background = color(0, 0, 0, 77) 
 }
 
 
@@ -8162,286 +8115,6 @@ gradient.table = {
     {color(115, 115, 115, 255), 0.5},
     {color(233, 233, 233, 255), 1}
 }
-
-
-
-
---[[
-local ffi = require('ffi')
-local pui = require('gamesense/pui')
-local surface = require('gamesense/surface')
-
-local a = function (...) return ... end
-
-local surface_create_font = surface.create_font
-local verdana = surface_create_font('Verdana', 12, 400, {})
-
-
-
-
-local A_1 = {
-    A_2 = panorama.open("CSGOHud").MyPersonaAPI.GetName(),
-    A_3 = "DEBUG",
-}
-
-
-local color do
-    local helpers = {
-        RGBtoHEX = a(function (col, short)
-            if not col then return "000000FF" end
-            local r = clamp_color(col.r or 0)
-            local g = clamp_color(col.g or 0)
-            local b = clamp_color(col.b or 0)
-            local alpha = clamp_color(col.a or 255)
-            return string.format(short and "%02X%02X%02X" or "%02X%02X%02X%02X", r, g, b, alpha)
-        end),
-        HEXtoRGB = a(function (hex)
-            hex = string.gsub(hex, "^#", "")
-            return tonumber(string.sub(hex, 1, 2), 16), tonumber(string.sub(hex, 3, 4), 16), tonumber(string.sub(hex, 5, 6), 16), tonumber(string.sub(hex, 7, 8), 16) or 255
-        end)
-    }
-
-    local create
-    local mt = {
-        __eq = a(function (a, b)
-            return a.r == b.r and a.g == b.g and a.b == b.b and a.a == b.a
-        end),
-        lerp = a(function (f, t, w)
-            return create(f.r + (t.r - f.r) * w, f.g + (t.g - f.g) * w, f.b + (t.b - f.b) * w, f.a + (t.a - f.a) * w)
-        end),
-        to_hex = helpers.RGBtoHEX,
-        alphen = a(function (self, a, r)
-            return create(self.r, self.g, self.b, r and a * self.a or a)
-        end),
-    } mt.__index = mt
-
-    create = ffi.metatype(ffi.typeof("struct { uint8_t r; uint8_t g; uint8_t b; uint8_t a; }"), mt)
-
-    color = setmetatable({
-        rgb = a(function (r, g, b, a)
-            r = math.min(r or 255, 255)
-            return create(r, g and math.min(g, 255) or r, b and math.min(b, 255) or r, a and math.min(a, 255) or 255)
-        end),
-        hex = a(function (hex)
-            local r, g, b, a = helpers.HEXtoRGB(hex)
-            return create(r, g, b, a)
-        end)
-    }, {
-        __call = a(function (self, r, g, b, a)
-            return type(r) == "string" and self.hex(r) or self.rgb(r, g, b, a)
-        end),
-    })
-end
-
-local colors = {
-    text = color.rgb(230),
-    panel = {
-        l1 = color.rgb(30, 30, 30, 180),
-    }
-}
-
-
-local DPI, _DPI = 1, {}
-local sw, sh = client.screen_size()
-local asw, ash = sw, sh
-local sc = {x = sw * .5, y = sh * .5}
-local asc = {x = asw * .5, y = ash * .5}
-
-
-local render do
-    local alpha = 1
-    local astack = {}
-    local measurements = setmetatable({}, { __mode = "kv" })
-    local dpi_flag = ""
-    local dpi_ref = ui.reference("MISC", "Settings", "DPI scale")
-    local blurs = setmetatable({}, {__mode = "kv"})
-
-    _DPI.scalable = false
-    _DPI.callback = function ()
-        local old = DPI
-        DPI = _DPI.scalable and tonumber(ui.get(dpi_ref):sub(1, -2)) * .01 or 1
-        sw, sh = client.screen_size()
-        sw, sh = sw / DPI, sh / DPI
-        sc.x, sc.y = sw * .5, sh * .5
-        dpi_flag = DPI ~= 1 and "d" or ""
-    end
-    _DPI.callback()
-    ui.set_callback(dpi_ref, _DPI.callback)
-
-    local function check_screen()
-        if sw == 0 or sh == 0 then
-            _DPI.callback()
-            asw, ash = client.screen_size()
-            sw, sh = client.screen_size()
-        else
-            client.unset_event_callback("paint_ui", check_screen)
-        end
-    end
-    client.set_event_callback("paint_ui", check_screen)
-
-    client.set_event_callback("paint", function ()
-        for i = 1, #blurs do
-            local v = blurs[i]
-            if v then renderer.blur(v[1], v[2], v[3], v[4]) end
-        end
-        table.clear(blurs)
-    end)
-    client.set_event_callback("paint_ui", function ()
-        table.clear(blurs)
-    end)
-
-    local F = math.floor
-
-    render = setmetatable({
-        push_alpha = a(function (v)
-            local len = #astack
-            astack[len+1] = v
-            alpha = alpha * astack[len+1] * (astack[len] or 1)
-            if len > 255 then error "alpha stack exceeded 255 objects" end
-        end),
-        pop_alpha = a(function ()
-            local len = #astack
-            astack[len], len = nil, len-1
-            alpha = len == 0 and 1 or astack[len] * (astack[len-1] or 1)
-        end),
-        get_alpha = a(function () return alpha end),
-
-        blur = a(function (x, y, w, h, a)
-            if (a or 1) * alpha > .25 then
-                blurs[#blurs+1] = {F(x * DPI), F(y * DPI), F(w * DPI), F(h * DPI)}
-            end
-        end),
-        rectangle = a(function (x, y, w, h, c, n)
-            x, y, w, h, n = F(x * DPI), F(y * DPI), F(w * DPI), F(h * DPI), n and F(n * DPI) or 0
-            local r, g, b, a = c.r, c.g, c.b, c.a * alpha
-            if n == 0 then
-                renderer.rectangle(x, y, w, h, r, g, b, a)
-            else
-                renderer.circle(x + n, y + n, r, g, b, a, n, 180, 0.25)
-                renderer.rectangle(x + n, y, w - n - n, n, r, g, b, a)
-                renderer.circle(x + w - n, y + n, r, g, b, a, n, 90, 0.25)
-                renderer.rectangle(x, y + n, w, h - n - n, r, g, b, a)
-                renderer.circle(x + n, y + h - n, r, g, b, a, n, 270, 0.25)
-                renderer.rectangle(x + n, y + h - n, w - n - n, n, r, g, b, a)
-                renderer.circle(x + w - n, y + h - n, r, g, b, a, n, 0, 0.25)
-            end
-        end),
-        text = a(function (x, y, c, flags, width, ...)
-            renderer.text(x * DPI, y * DPI, c.r, c.g, c.b, c.a * alpha, (flags or "") .. dpi_flag, width or 0, ...)
-        end),
-        measure_text = a(function (flags, text)
-            if not text or text == "" then return 0, 0 end
-            text = text:gsub("\a%x%x%x%x%x%x%x%x", "")
-            flags = flags or ""
-            local key = string.format("<%s>%s", flags, text)
-            if not measurements[key] or measurements[key][1] == 0 then
-                measurements[key] = { renderer.measure_text(flags, text) }
-            end
-            return measurements[key][1], measurements[key][2]
-        end),
-    }, {__index = renderer})
-end
-
-
-local anima do
-    local animators = setmetatable({}, {__mode = "kv"})
-    local frametime, g_speed = globals.absoluteframetime(), 1
-
-    math.clamp = function (x, a, b) if a > x then return a elseif b < x then return b else return x end end
-
-    anima = {
-        pulse = 0,
-        easings = {
-            pow = {
-                function (x, p) return 1 - ((1 - x) ^ (p or 3)) end,
-                function (x, p) return x ^ (p or 3) end,
-                function (x, p) return x < 0.5 and 4 * math.pow(x, p or 3) or 1 - math.pow(-2 * x + 2, p or 3) * 0.5 end,
-            }
-        },
-        lerp = a(function (a, b, s, t)
-            local c = a + (b - a) * frametime * (s or 8) * g_speed
-            return math.abs(b - c) < (t or .005) and b or c
-        end),
-        condition = a(function (id, c, s, e)
-            local ctx = id[1] and id or animators[id]
-            if not ctx then animators[id] = { c and 1 or 0, c }; ctx = animators[id] end
-            s = s or 4
-            local cur_s = type(s) == "table" and (c and s[1] or s[2]) or s
-            ctx[1] = math.clamp(ctx[1] + (frametime * math.abs(cur_s) * g_speed * (c and 1 or -1)), 0, 1)
-            return (ctx[1] % 1 == 0 or cur_s < 0) and ctx[1] or
-                anima.easings.pow[e and (c and e[1][1] or e[2][1]) or (c and 1 or 3)](ctx[1], e and (c and e[1][2] or e[2][2]) or 3)
-        end)
-    }
-
-    client.set_event_callback("paint_ui", function ()
-        anima.pulse = math.abs(globals.realtime() * 1 % 2 - 1)
-        frametime = globals.absoluteframetime()
-    end)
-end
-
-
-local hud = {}
-hud.watermark = {
-    x = sw - 120, y = 24, w = 160, h = 24,
-    alpha = 0, offset_x = 20, progress = {0}, offset_progress = {0},
-    items = {
-        {
-            0, function (self, x, y)
-                local cname = A_1.A_2
-                local t = string.format(A_1.A_3 == "DEBUG" and "%s" or "%s %s%02x— %s",
-                    cname ~= "" and cname or A_1.A_2, "\aFFFFFF", render.get_alpha() * self[1] * 255, A_1.A_3)
-                local tw, th = render.measure_text("", t)
-                if self[1] > 0 then
-                    render.blur(x, y + 1, tw + 16, 22, 1)
-                    render.rectangle(x, y + 1, tw + 16, 22, colors.panel.l1, 4)
-                    render.text(x + 8, y + 6, colors.text, nil, nil, t)
-                end
-                return true, tw + 16
-            end, {}
-        },
-        {
-            0, function (self, x, y)
-                local hours, minutes = client.system_time()
-                local text = string.format("%02d:%02d", hours, minutes)
-                local tw, th = render.measure_text("", text)
-                if self[1] > 0 then
-                    render.blur(x, y + 1, tw + 16, 22, 1)
-                    render.rectangle(x, y + 1, tw + 16, 22, colors.panel.l1, 4)
-                    render.text(x + 8, y + 6, colors.text, nil, nil, text)
-                end
-                return true, tw + 16
-            end, {}
-        },
-    },
-    enumerate = function (self)
-        local total = 0
-        for i, v in ipairs(self.items) do
-            render.push_alpha(v[1])
-            local state, length = v[2](v, self.x + total + self.offset_x, self.y)
-            render.pop_alpha()
-            v[1] = anima.condition(v[3], state, 2, {{1, 3}, {3, 3}})
-            total = total + (length + 2) * v[1]
-        end
-        self.w = anima.lerp(self.w, total, 10, .5)
-    end,
-    update = function (self)
-        self.alpha = anima.condition(self.progress, true, 2, {{1, 3}, {3, 3}})
-        self.offset_x = anima.lerp(self.offset_x, 0, 10, .01)
-        return self.alpha
-    end,
-    paint = function (self)
-        render.push_alpha(self.alpha)
-        self:enumerate()
-        render.pop_alpha()
-    end
-}
-
-
-client.set_event_callback("paint_ui", function ()
-    hud.watermark:update()
-    hud.watermark:paint()
-end)
-]]--
 
 local default_elements = {
     ui_elements.prediction_factor,
@@ -8497,15 +8170,7 @@ local dependencies = {
     },
     [ui_elements.smart_head_aim] = { ui_elements.smart_head_hp_threshold },
     [ui_elements.a_brute] = { ui_elements.brute_duration },
---[[
-    [ui_elements.flick_detection] = {
-        ui_elements.flick_velocity_threshold,
-        ui_elements.flick_reaction_time,
-        ui_elements.flick_prediction_boost,
-        ui_elements.flick_yaw_correction,
-        ui_elements.flick_mode,
-    },
-]]
+
 }
 
 
@@ -8573,9 +8238,6 @@ local function update_ui_visibility()
                 end
             end
 
---            ui.set_visible(ui_elements.confidence_threshold, true)
---            ui.set_visible(ui_elements.low_confidence_delay_label, true)
---            ui.set_visible(ui_elements.low_confidence_delay, true)
 
 
             for checkbox, dep_elements in pairs(dependencies) do
@@ -8724,7 +8386,7 @@ local function apply_brute_angles(player)
     plist.set(player, "Force body yaw value", math.clamp(body_yaw, -60, 60))
     if ui.get(ui_new_logs_enable) then
         client.color_log(255, 165, 0, string.format(
-            "[BALENCIAGA] Brute: Enemy=%s, Yaw=%.1f, BodyYaw=%.1f, Pitch=%.1f",
+            "[PR0KLADKI] Brute: Enemy=%s, Yaw=%.1f, BodyYaw=%.1f, Pitch=%.1f",
             entity.get_player_name(player), yaw, body_yaw, pitch
         ))
     end
@@ -8879,14 +8541,6 @@ local function smart_yaw_correction(enemy, final_yaw, data, yaw_diff, is_jitteri
         log_debug(string.format("Jitter correction for %s: yaw=%.1f, intensity=%.2f",
             entity.get_player_name(enemy), correction_yaw, correction_intensity))
     end
---    if data.flick_detected and ui.get(ui_elements.flick_detection) then
---        correction_yaw = ui.get(ui_elements.flick_yaw_correction) * (desync_side > 0 and 1.5 or -1.5)
---        correction_intensity = correction_intensity * 1.2
---        data.confidence = math.max(40, data.confidence - 5)
---        data.aa_pattern = "flick"
---        log_debug(string.format("Flick correction for %s: yaw=%.1f, intensity=%.2f",
---            entity.get_player_name(enemy), correction_yaw, correction_intensity))
---    end
     if yaw_diff > yaw_diff_threshold or desync_side ~= 0 then
         correction_yaw = desync_range * desync_side
         correction_intensity = correction_intensity * (1 + (data.miss_count * 0.1))
@@ -8973,7 +8627,7 @@ local function predict_fakelag_position(enemy, pred_x, pred_y, pred_z)
     return new_x, new_y, new_z
 end
 
--- боди нпхуй ах ах ах ах
+-- боди нпхуй
 local function calculate_body_hitbox_offset(enemy, final_yaw)
     local pose_yaw = entity.get_prop(enemy, "m_flPoseParameter", 11) or 0
     pose_yaw = (pose_yaw * 360) - 180
@@ -9018,7 +8672,7 @@ local function n3r4z1m_resolver()
     if not ui.get(ui_resolver_enabled) then return end
     local latency = client.latency()
     if latency > 0.2 then
-        client.color_log(255, 0, 0, string.format("[BALENCIAGA] Warning: High latency (%.0fms) may cause issues", latency * 1000))
+        client.color_log(255, 0, 0, string.format("[PR0KLADKI] Warning: High latency (%.0fms) may cause issues", latency * 1000))
         return
     end
     local success, err = pcall(function()
@@ -9036,7 +8690,7 @@ local function n3r4z1m_resolver()
         local optimize_jump_scout = ui.get(ui_elements.jump_scout_opt) and is_scout
         local enemies = entity.get_players(true)
         local local_hp = entity.get_prop(local_player, "m_iHealth")
-        local max_enemies = 5 -- Ограничение на челиков
+        local max_enemies = 5 
 
         debug_info = {}
         handle_entities()
@@ -9046,13 +8700,13 @@ local function n3r4z1m_resolver()
             for _, enemy in ipairs(enemies) do
                 if resolver_data[enemy] and (resolver_data[enemy].hit_count > 0 or resolver_data[enemy].miss_count < 3) then
                     resolved_target = enemy
-                    client.color_log(255, 255, 255, "[BALENCIAGA] пидор: " .. entity.get_player_name(enemy))
+                    client.color_log(255, 255, 255, "[PR0KLADKI] пидор: " .. entity.get_player_name(enemy))
                     break
                 end
             end
             if not resolved_target and #enemies > 0 then
                 resolved_target = enemies[1]
-                client.color_log(255, 255, 255, "[BALENCIAGA] Resolved target: " .. entity.get_player_name(enemies[1]))
+                client.color_log(255, 255, 255, "[PR0KLADKI] Resolved target: " .. entity.get_player_name(enemies[1]))
             end
         end
 
@@ -9071,24 +8725,6 @@ local function n3r4z1m_resolver()
                     local mode = ui.get(ui_mode_select)
 
                     if mode == "Custom" then
-
---                        if ui.get(ui_elements.defensive_resolver) then
---                                    local jump = bit.band(entity.get_prop(enemy, "m_fFlags"), 1)
---                                    local pitch, _ = entity.get_prop(enemy, "m_angEyeAngles")
---                                    if jump == 0 and pitch < -1 then
---                                        plist.set(enemy, "Force pitch", true)
---                                        plist.set(enemy, "Force pitch value", 0)
---                                        plist.set(enemy, "Force body yaw", true)
---                                        plist.set(enemy, "Force body yaw value", 0)
---                                        if ui.get(ui_toggle_logs) then
---                                            client.color_log(0, 255, 255, string.format("[BALENCIAGA] Defensive Resolver applied for %s", entity.get_player_name(enemy)))
---                                        end
---                                    else
---                                        plist.set(enemy, "Force pitch", false)
---                                    end
---                                end
---                                local should_process = update_enemy_data_fix(enemy) or (ui.get(ui_elements.dormant_aimbot) and enemy == resolved_target)
-
                         if ui.get(ui_elements.alternative_jitter) then
                             local jitter_pattern, jitter_amount = AlternativeDetectJitterPattern(enemy, data)
                             if jitter_pattern ~= "unknown" then
@@ -9110,7 +8746,7 @@ local function n3r4z1m_resolver()
         end
     end)
     if not success then
-        client.color_log(255, 255, 255, "[BALENCIAGA] Critical error in resolver: ", err)
+        client.color_log(255, 255, 255, "[PR0KLADKI] Critical error in resolver: ", err)
     end
 end
 
@@ -9263,7 +8899,7 @@ client.set_event_callback("paint", function()
     local stats_text = string.format("Shots: %d  |  Hits: %d  |  Misses: %d  |  Hit Rate: %s%%  |  Close Target: %s",
         total_shots, hits, misses, hit_rate, target_name)
 
-    local title = "BALENCIAGA" -- ‹ Ĭɱmŏŗŧàɫ ›
+    local title = "PR0KLADKI" -- ‹ Ĭɱmŏŗŧàɫ ›
     local title_width = renderer.measure_text("b", title)
     local title_x = screen_w / 2 - title_width / 2
     local title_y = screen_h / 2 + 493
@@ -9386,7 +9022,7 @@ local function n3r4z1m_resolver()
 
         if ui.get(ui_elements.hit_chance_bind) then
             hit_chance_enabled = not hit_chance_enabled
-            client.color_log(255, 255, 255, hit_chance_enabled and "[] Hit Chance Override Enabled" or "[BALENCIAGA] Hit Chance Override Disabled")
+            client.color_log(255, 255, 255, hit_chance_enabled and "[] Hit Chance Override Enabled" or "[PR0KLADKI] Hit Chance Override Disabled")
         end
 
        debug_info = {}
@@ -9840,7 +9476,7 @@ local function dormant_aimbot(cmd)
 
                     if ui.get(ui_new_logs_enable) then
                         client.color_log(255, 165, 0, string.format(
-                            "[BALENCIAGA] Dormant Shot: %s, Dmg=%d, Alpha=%.3f, Inacc=%.3f, Hitbox=%s",
+                            "[PR0KLADKI] Dormant Shot: %s, Dmg=%d, Alpha=%.3f, Inacc=%.3f, Hitbox=%s",
                             entity.get_player_name(player), dmg, alpha_multiplier, inaccuracy, safe_hitbox
                         ))
                     end
@@ -9919,7 +9555,7 @@ local function detect_fakelag(enemy)
     local is_fakelag = choke > 2 and sim_time > 0
     if is_fakelag and ui.get(ui_new_logs_enable) then
         client.color_log(255, 200, 0, string.format(
-            "[BALENCIAGA] Fakelag: Enemy=%s, Choke=%d ticks",
+            "[PR0KLADKI] Fakelag: Enemy=%s, Choke=%d ticks",
             entity.get_player_name(enemy), choke
         ))
     end
@@ -10064,7 +9700,7 @@ local function base_predict_position(enemy, local_x, local_y, local_z, bullet_sp
             pred_z = z + vz * ticks_ahead * tick_rate * reduced_factor
             if ui.get(ui_new_logs_enable) then
                 client.color_log(255, 100, 100, string.format(
-                    "[BALENCIAGA] Fast Predict: Collision detected for %s, reduced factor to %.2f",
+                    "[PR0KLADKI] Fast Predict: Collision detected for %s, reduced factor to %.2f",
                     entity.get_player_name(enemy), reduced_factor
                 ))
             end
@@ -10090,7 +9726,7 @@ local function base_predict_position(enemy, local_x, local_y, local_z, bullet_sp
 
     if ui.get(ui_new_logs_enable) then
         client.color_log(255, 165, 0, string.format(
-            "[BALENCIAGA] Fast Predict: Enemy=%s, Factor=%.2f, Ticks=%d, Pos=(%.1f,%.1f,%.1f), Speed=%.0f, Ping=%.0fms, Loss=%.0f%%, AnimFresh=%.1f, Jitter=%s, State=%s, DirChange=%.2f, Accel=%.2f, Confidence=%.0f, Misses=%d", -- бляя ну хз мб работает :((
+            "[PR0KLADKI] Fast Predict: Enemy=%s, Factor=%.2f, Ticks=%d, Pos=(%.1f,%.1f,%.1f), Speed=%.0f, Ping=%.0fms, Loss=%.0f%%, AnimFresh=%.1f, Jitter=%s, State=%s, DirChange=%.2f, Accel=%.2f, Confidence=%.0f, Misses=%d", -- бляя ну хз мб работает :((
             entity.get_player_name(enemy), prediction_factor, ticks_ahead, pred_x, pred_y, pred_z, speed, latency * 1000, loss, anim_freshness,
             detect_jitter_pattern(data.yaw_history or {}) and "Yes" or "No", state, direction_change_factor, accel_factor, data.confidence, data.miss_count
         ))
@@ -10131,7 +9767,7 @@ local function n3r4z1m_resolver()
     if not ui.get(ui_resolver_enabled) then return end
     local latency = client.latency()
     if latency > 0.2 then
-        client.color_log(255, 0, 0, string.format("[BALENCIAGA] Warning: High latency (%.0fms) may cause issues", latency * 1000))
+        client.color_log(255, 0, 0, string.format("[PR0KLADKI] Warning: High latency (%.0fms) may cause issues", latency * 1000))
     end
     if mode == "Custom" then
 end
@@ -10161,16 +9797,16 @@ end
         for _, enemy in ipairs(enemies) do
             if resolver_data[enemy] and (resolver_data[enemy].hit_count > 0 or resolver_data[enemy].miss_count < 3) then
                 resolved_target = enemy
-                client.color_log(255, 255, 255, "[BALENCIAGA] пидарас: " .. entity.get_player_name(enemy))
+                client.color_log(255, 255, 255, "[PR0KLADKI] пидарас: " .. entity.get_player_name(enemy))
                 break
             end
         end
         if not resolved_target and #enemies > 0 then
             resolved_target = enemies[1]
-            client.color_log(255, 255, 255, "[BALENCIAGA] Resolved target: " .. entity.get_player_name(enemies[1]))
+            client.color_log(255, 255, 255, "[PR0KLADKI] Resolved target: " .. entity.get_player_name(enemies[1]))
         end
         if not resolved_target then
-            client.color_log(255, 255, 255, "[BALENCIAGA] No resolved_target selected")
+            client.color_log(255, 255, 255, "[PR0KLADKI] No resolved_target selected")
         end
     end
 
@@ -10308,7 +9944,7 @@ end
                             data.confidence = math.max(50, data.confidence - 5)
                             if ui.get(ui_new_logs_enable) then
                                 client.color_log(255, 165, 0, string.format(
-                                    "[BALENCIAGA] Jitter: Enemy=%s, Pattern=%s, Amount=%.1f, Yaw=%.1f, Confidence=%.0f",
+                                    "[PR0KLADKI] Jitter: Enemy=%s, Pattern=%s, Amount=%.1f, Yaw=%.1f, Confidence=%.0f",
                                     entity.get_player_name(enemy), jitter_pattern, jitter_amount, final_yaw, data.confidence
                                 ))
                             end
@@ -10484,7 +10120,7 @@ end
 
                             if ui.get(ui_toggle_logs) then
                                 client.color_log(255, 255, 255, (string.format(
-                                    "[BALENCIAGA] Yaw correction for %s: %.1f° (Ping: %.0fms, Loss: %.0f%%, State: %s, Speed: %.0f, AnimFresh: %.1f, PredYaw: %.1f, Confidence: %.0f%%)", --- бляяя лан похуй
+                                    "[PR0KLADKI] Yaw correction for %s: %.1f° (Ping: %.0fms, Loss: %.0f%%, State: %s, Speed: %.0f, AnimFresh: %.1f, PredYaw: %.1f, Confidence: %.0f%%)", --- бляяя лан похуй
                                     entity.get_player_name(enemy), yaw_correction, latency * 1000, loss, state, speed, anim_freshness, yaw_prediction, data.confidence
                                 )))
                             end
@@ -10526,7 +10162,7 @@ end
                         end
                         if ui.get(ui_new_logs_enable) then
                             client.color_log(255, 165, 0, string.format(
-                                "[BALENCIAGA] Low confidence: Enemy=%s, SafeYaw=%.1f, Hitbox=%s, Confidence=%.0f, Dormant=%s",
+                                "[PR0KLADKI] Low confidence: Enemy=%s, SafeYaw=%.1f, Hitbox=%s, Confidence=%.0f, Dormant=%s",
                                 entity.get_player_name(enemy), safe_yaw, safe_hitbox, data.confidence, data.is_dormant and "Yes" or "No"
                             ))
                         end
@@ -10562,7 +10198,7 @@ end
                                 brute.yaw_index = (brute.yaw_index % #brute_angles.yaw) + 1
                                 if ui.get(ui_new_logs_enable) then
                                     client.color_log(255, 165, 0, string.format(
-                                        "[BALENCIAGA] Brute activated on shootable: Enemy=%s", entity.get_player_name(enemy)
+                                        "[PR0KLADKI] Brute activated on shootable: Enemy=%s", entity.get_player_name(enemy)
                                     ))
                                 end
                                 brute_data[enemy] = brute
@@ -10697,7 +10333,7 @@ local function on_miss(e)
             brute.yaw_index = (brute.yaw_index % #brute_angles.yaw) + 1
             if ui.get(ui_new_logs_enable) then
                 client.color_log(255, 165, 0, string.format(
-                    "[BALENCIAGA] Brute activated on miss: Enemy=%s, Misses=%d",
+                    "[PR0KLADKI] Brute activated on miss: Enemy=%s, Misses=%d",
                     entity.get_player_name(target), brute.misses
                 ))
             end
@@ -10711,7 +10347,7 @@ local function on_miss(e)
         local state = get_player_state(target) or "unknown"
         local aa_pattern = data.aa_pattern or "unknown"
         client.color_log(255, 100, 100, string.format(
-            "[BALENCIAGA] Miss: Enemy=%s, Reason=%s, Hitgroup=%d, State=%s, AA=%s, Confidence=%.0f, MissCount=%d",
+            "[PR0KLADKI] Miss: Enemy=%s, Reason=%s, Hitgroup=%d, State=%s, AA=%s, Confidence=%.0f, MissCount=%d",
             entity.get_player_name(target), reason, hitgroup, state, aa_pattern, data.confidence, data.miss_count
         ))
     end
@@ -10723,58 +10359,31 @@ client.set_event_callback('paint_ui', function()
     for _, enemy in ipairs(enemies) do
         if resolver_data[enemy] and (resolver_data[enemy].hit_count > 0 or resolver_data[enemy].miss_count < 3) then
             resolved_target = enemy
-            client.color_log(255, 255, 255, "[BALENCIAGA] Selected resolved target: " .. entity.get_player_name(enemy))
+            client.color_log(255, 255, 255, "[PR0KLADKI] Selected resolved target: " .. entity.get_player_name(enemy))
             break
         end
     end
     if not resolved_target and #enemies > 0 then
         resolved_target = enemies[1]
-        client.color_log(255, 255, 255, "[BALENCIAGA] Resolved target: " .. entity.get_player_name(enemies[1]))
+        client.color_log(255, 255, 255, "[PR0KLADKI] Resolved target: " .. entity.get_player_name(enemies[1]))
     end
     if not resolved_target then
-        client.color_log(255, 255, 255, "[BALENCIAGA] No resolved target")
+        client.color_log(255, 255, 255, "[PR0KLADKI] No resolved target")
     end
 end
     if not nn_network then
-        client.color_log(255, 255, 255, "[BALENCIAGA] Error: Neural network not initialized")
+        client.color_log(255, 255, 255, "[PR0KLADKI] Error: Neural network not initialized")
         return
     end
     local scr_w, scr_h = client.screen_size()
-    renderer.text(scr_w - 300, scr_h - 50, 255, 255, 255, 255, nil, 0, "[BALENCIAGA] Rendering Neural Network") -- АХУЕТЬ НЕРАЗИМ
+    renderer.text(scr_w - 300, scr_h - 50, 255, 255, 255, 255, nil, 0, "[PR0KLADKI] Rendering Neural Network") -- АХУЕТЬ НЕРАЗИМ
     nn_network:render()
 end)
     end)
     if not success then
-        client.color_log(255, 255, 255, "[BALENCIAGA] Critical error in resolver: ", err)
+        client.color_log(255, 255, 255, "[PR0KLADKI] Critical error in resolver: ", err)
     end
 end
-local kill_phrases = {
-    "☠︎",
-    "★︎",
-    "☆︎",
-    "☄︎",
-    "☣︎",
-    "✗︎",
-    "☣︎",
-    "$",
-    "€",
-}
-local fancy_tag = "tg - @balenciagaSKEET"
-local function say_in_chat(msg)
-    client.exec("say " .. msg)
-end
-local function on_player_death(e)
-    local local_player = entity.get_local_player()
-    local attacker = client.userid_to_entindex(e.attacker)
-    local victim = client.userid_to_entindex(e.userid)
-
-    if attacker == local_player and victim ~= local_player then
-        local emoji = kill_phrases[client.random_int(1, #kill_phrases)]
-        local msg = emoji .. " " .. fancy_tag
-        say_in_chat(msg)
-    end
-end
-client.set_event_callback("player_death", on_player_death)
 
 
 pcall(function()
